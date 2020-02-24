@@ -1,0 +1,14 @@
+﻿<SolutionConfiguration>
+  <Settings>
+    <AllowParallelTestExecution>True</AllowParallelTestExecution>
+    <InstrumentationMode>Optimised</InstrumentationMode>
+    <MetricsExclusionList>
+      <Value>ValueObject.cs:DomainName\DomainName.PL\DomainName.PL.csproj</Value>
+      <Value>AggregateHandlerBase.cs:DomainName\DomainName.Domain.NSBus\DomainName.Domain.NSBus.csproj</Value>
+      <Value>RavenDocumentStoreFactory.cs:DomainName\DomainName.ReadModel.Queries\DomainName.ReadModel.Queries.csproj</Value>
+      <Value>DomainName\DomainName.ReadModel.Queries.Tests\DomainName.ReadModel.Queries.Tests.csproj\IntegrationTests</Value>
+      <Value>SimpleInjectorIocAdapter.cs:DomainName\DomainName.WebApi.Tests\DomainName.WebApi.UnitTests.csproj</Value>
+    </MetricsExclusionList>
+    <SolutionConfigured>True</SolutionConfigured>
+  </Settings>
+</SolutionConfiguration>

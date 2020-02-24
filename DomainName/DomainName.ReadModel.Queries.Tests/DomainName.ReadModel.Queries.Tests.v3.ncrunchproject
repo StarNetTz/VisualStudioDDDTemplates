@@ -1,0 +1,13 @@
+﻿<ProjectConfiguration>
+  <Settings>
+    <IgnoredTests>
+      <FixtureTestSelector>
+        <FixtureName>DomainName.ReadModel.Queries.Tests.IntegrationTests.OrganizationSmartSearchQueryIntegrationTests</FixtureName>
+      </FixtureTestSelector>
+      <FixtureTestSelector>
+        <FixtureName>DomainName.ReadModel.Queries.Tests.IntegrationTests.RavenDbIntegrationTests</FixtureName>
+      </FixtureTestSelector>
+    </IgnoredTests>
+    <IgnoreThisComponentCompletely>False</IgnoreThisComponentCompletely>
+  </Settings>
+</ProjectConfiguration>
