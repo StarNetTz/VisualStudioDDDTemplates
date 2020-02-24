@@ -1,4 +1,4 @@
-﻿using DomainName.Domain.Organization;
+﻿using $ext_projectname$.Domain.Organization;
 using Starnet.Aggregates;
 using System;
 using System.Collections.Generic;

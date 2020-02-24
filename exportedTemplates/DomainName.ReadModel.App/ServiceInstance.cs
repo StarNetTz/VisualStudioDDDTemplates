@@ -1,4 +1,4 @@
-﻿using DomainName.ReadModel.Projections;
+﻿using $ext_projectname$.ReadModel.Projections;
 using Microsoft.Extensions.Logging;
 using SimpleInjector;
 using Starnet.Projections;

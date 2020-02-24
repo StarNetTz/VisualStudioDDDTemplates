@@ -5,7 +5,7 @@ using NpgsqlTypes;
 using NServiceBus;
 using NServiceBus.Logging;
 using Starnet.Aggregates.ES;
-using DomainName.Domain.Infrastructure;
+using $ext_projectname$.Domain.Infrastructure;
 using System;
 using System.Threading.Tasks;
 

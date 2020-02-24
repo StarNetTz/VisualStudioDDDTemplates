@@ -1,5 +1,5 @@
-﻿using DomainName.ReadModel.Projections.ES;
-using DomainName.ReadModel.Queries;
+﻿using $ext_projectname$.ReadModel.Projections.ES;
+using $ext_projectname$.ReadModel.Queries;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;

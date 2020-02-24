@@ -1,4 +1,4 @@
-﻿using DomainName.WebApi.ServiceModel;
+﻿using $ext_projectname$.WebApi.ServiceModel;
 using ServiceStack.FluentValidation;
 using System;
 

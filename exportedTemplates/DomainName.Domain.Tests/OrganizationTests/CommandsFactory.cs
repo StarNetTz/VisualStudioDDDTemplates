@@ -1,4 +1,4 @@
-﻿using DomainName.PL.Commands;
+﻿using $ext_projectname$.PL.Commands;
 using System;
 
 namespace $safeprojectname$.OrganizationTests

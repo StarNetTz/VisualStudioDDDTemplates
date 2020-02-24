@@ -1,8 +1,8 @@
 ﻿using NUnit.Framework;
 using Funq;
 using ServiceStack;
-using DomainName.WebApi.ServiceInterface;
-using DomainName.WebApi.ServiceModel;
+using $ext_projectname$.WebApi.ServiceInterface;
+using $ext_projectname$.WebApi.ServiceModel;
 
 namespace $safeprojectname$
 {

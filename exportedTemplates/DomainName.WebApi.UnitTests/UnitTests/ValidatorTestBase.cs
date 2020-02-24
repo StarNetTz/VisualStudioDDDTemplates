@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
-namespace DomainName.WebApi.Tests
+namespace $safeprojectname$.WebApi.Tests
 {
     public abstract class ValidatorTestBase<T>
     {

@@ -1,5 +1,5 @@
-﻿using DomainName.PL;
-using DomainName.PL.Events;
+﻿using $ext_projectname$.PL;
+using $ext_projectname$.PL.Events;
 using Starnet.Aggregates;
 
 namespace $safeprojectname$.Organization

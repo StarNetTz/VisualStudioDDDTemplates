@@ -1,7 +1,7 @@
-﻿using DomainName.ReadModel;
+﻿using $ext_projectname$.ReadModel;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.Tests
+namespace $safeprojectname$.WebApi.Tests
 {
     public class StubQueryById<T> : IQueryById<T>
     {

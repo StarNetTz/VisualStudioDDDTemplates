@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.Domain.NSBus\DomainName.Domain.NSBus.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.Domain.NSBus\$ext_projectname$.Domain.NSBus.csproj" />
   </ItemGroup>
 
 </Project>

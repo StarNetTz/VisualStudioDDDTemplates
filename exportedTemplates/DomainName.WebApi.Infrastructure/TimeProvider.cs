@@ -1,4 +1,4 @@
-﻿using DomainName.WebApi.ServiceInterface;
+﻿using $ext_projectname$.WebApi.ServiceInterface;
 using System;
 
 namespace $safeprojectname$

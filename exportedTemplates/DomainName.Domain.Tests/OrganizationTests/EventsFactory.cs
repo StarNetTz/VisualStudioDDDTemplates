@@ -1,4 +1,4 @@
-﻿using DomainName.PL.Events;
+﻿using $ext_projectname$.PL.Events;
 using System;
 
 namespace $safeprojectname$.OrganizationTests

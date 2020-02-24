@@ -18,7 +18,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.ReadModel.Queries\DomainName.ReadModel.Queries.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel.Queries\$ext_projectname$.ReadModel.Queries.csproj" />
   </ItemGroup>
 
   <ItemGroup>

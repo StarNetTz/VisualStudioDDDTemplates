@@ -1,4 +1,4 @@
-﻿using DomainName.ReadModel;
+﻿using $ext_projectname$.ReadModel;
 using ServiceStack;
 
 namespace $safeprojectname$

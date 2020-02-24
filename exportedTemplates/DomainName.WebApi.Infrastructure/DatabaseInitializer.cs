@@ -1,5 +1,5 @@
-﻿using DomainName.PL;
-using DomainName.ReadModel;
+﻿using $ext_projectname$.PL;
+using $ext_projectname$.ReadModel;
 using Raven.Client.Documents;
 using System;
 using System.Collections.Generic;

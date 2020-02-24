@@ -1,4 +1,4 @@
-﻿using DomainName.PL;
+﻿using $ext_projectname$.PL;
 namespace $safeprojectname$
 {
     public class Organization

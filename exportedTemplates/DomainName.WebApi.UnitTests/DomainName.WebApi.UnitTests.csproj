@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.WebApi.ServiceInterface\DomainName.WebApi.ServiceInterface.csproj" />
-    <ProjectReference Include="..\DomainName.WebApi.ServiceModel\DomainName.WebApi.ServiceModel.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceInterface\$ext_projectname$.WebApi.ServiceInterface.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceModel\$ext_projectname$.WebApi.ServiceModel.csproj" />
 
     <PackageReference Include="NUnit" Version="3.12.0" />
     <PackageReference Include="NUnit3TestAdapter" Version="3.16.1">

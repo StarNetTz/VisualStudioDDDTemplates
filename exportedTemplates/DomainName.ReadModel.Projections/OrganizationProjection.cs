@@ -1,4 +1,4 @@
-﻿using DomainName.PL.Events;
+﻿using $ext_projectname$.PL.Events;
 using Starnet.Projections;
 using System.Threading.Tasks;
 

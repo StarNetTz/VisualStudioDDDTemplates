@@ -1,5 +1,5 @@
-﻿using DomainName.Domain.Organization;
-using DomainName.PL.Commands;
+﻿using $ext_projectname$.Domain.Organization;
+using $ext_projectname$.PL.Commands;
 using NServiceBus;
 using System.Threading.Tasks;
 

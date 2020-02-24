@@ -1,4 +1,4 @@
-﻿using DomainName.WebApi.ServiceInterface;
+﻿using $ext_projectname$.WebApi.ServiceInterface;
 using NUnit.Framework;
 using ServiceStack;
 using ServiceStack.Auth;
@@ -7,7 +7,7 @@ using ServiceStack.Validation;
 using System;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.Tests
+namespace $safeprojectname$.WebApi.Tests
 {
     [TestFixture]
     public class CommandServiceTestBase<T> where T : Service

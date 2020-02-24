@@ -1,5 +1,5 @@
-﻿using DomainName.ReadModel;
-using DomainName.WebApi.ServiceModel;
+﻿using $ext_projectname$.ReadModel;
+using $ext_projectname$.WebApi.ServiceModel;
 using ServiceStack;
 using System.Collections.Generic;
 using System.Threading.Tasks;

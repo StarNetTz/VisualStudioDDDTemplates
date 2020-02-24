@@ -16,9 +16,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.PL\DomainName.PL.csproj" />
-    <ProjectReference Include="..\DomainName.ReadModel.Projections\DomainName.ReadModel.Projections.csproj" />
-    <ProjectReference Include="..\DomainName.ReadModel\DomainName.ReadModel.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.PL\$ext_projectname$.PL.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel.Projections\$ext_projectname$.ReadModel.Projections.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel\$ext_projectname$.ReadModel.csproj" />
   </ItemGroup>
 
 </Project>

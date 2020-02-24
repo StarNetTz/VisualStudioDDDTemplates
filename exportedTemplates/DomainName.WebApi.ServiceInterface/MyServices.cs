@@ -1,6 +1,6 @@
 ﻿using System;
 using ServiceStack;
-using DomainName.WebApi.ServiceModel;
+using $ext_projectname$.WebApi.ServiceModel;
 
 namespace $safeprojectname$
 {

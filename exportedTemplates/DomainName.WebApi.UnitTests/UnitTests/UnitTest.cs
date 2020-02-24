@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
 using ServiceStack;
 using ServiceStack.Testing;
-using DomainName.WebApi.ServiceInterface;
-using DomainName.WebApi.ServiceModel;
+using $ext_projectname$.WebApi.ServiceInterface;
+using $ext_projectname$.WebApi.ServiceModel;
 
-namespace DomainName.WebApi.Tests
+namespace $safeprojectname$.WebApi.Tests
 {
     public class UnitTest
     {

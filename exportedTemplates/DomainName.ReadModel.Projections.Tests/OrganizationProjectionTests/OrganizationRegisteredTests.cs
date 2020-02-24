@@ -1,4 +1,4 @@
-﻿using DomainName.PL.Events;
+﻿using $ext_projectname$.PL.Events;
 using NUnit.Framework;
 using Starnet.Projections.Testing;
 using System;

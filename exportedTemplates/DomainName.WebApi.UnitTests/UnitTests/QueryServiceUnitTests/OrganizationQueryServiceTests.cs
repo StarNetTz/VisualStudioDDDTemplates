@@ -1,13 +1,13 @@
-﻿using DomainName.ReadModel;
-using DomainName.WebApi.ServiceInterface.QueryServices;
-using DomainName.WebApi.ServiceModel;
+﻿using $ext_projectname$.ReadModel;
+using $ext_projectname$.WebApi.ServiceInterface.QueryServices;
+using $ext_projectname$.WebApi.ServiceModel;
 using NUnit.Framework;
 using ServiceStack;
 using ServiceStack.Testing;
 using SimpleInjector;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.Tests
+namespace $safeprojectname$.WebApi.Tests
 {
     public class OrganizationQueryServiceTests
     {

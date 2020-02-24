@@ -1,12 +1,12 @@
-﻿using DomainName.ReadModel;
-using DomainName.WebApi.ServiceInterface.QueryServices;
+﻿using $ext_projectname$.ReadModel;
+using $ext_projectname$.WebApi.ServiceInterface.QueryServices;
 using NUnit.Framework;
 using ServiceStack;
 using ServiceStack.Testing;
 using SimpleInjector;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.Tests.UnitTests.QueryServiceUnitTests
+namespace $safeprojectname$.WebApi.Tests.UnitTests.QueryServiceUnitTests
 {
     class TypeaheadsServiceTests
     {

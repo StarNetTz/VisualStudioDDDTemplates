@@ -15,10 +15,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.ReadModel.Projections.ES\DomainName.ReadModel.Projections.ES.csproj" />
-    <ProjectReference Include="..\DomainName.ReadModel.Projections\DomainName.ReadModel.Projections.csproj" />
-    <ProjectReference Include="..\DomainName.ReadModel.Queries\DomainName.ReadModel.Queries.csproj" />
-    <ProjectReference Include="..\DomainName.ReadModel\DomainName.ReadModel.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel.Projections.ES\$ext_projectname$.ReadModel.Projections.ES.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel.Projections\$ext_projectname$.ReadModel.Projections.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel.Queries\$ext_projectname$.ReadModel.Queries.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel\$ext_projectname$.ReadModel.csproj" />
   </ItemGroup>
 
   <ItemGroup>
