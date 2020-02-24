@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="ServiceStack" Version="5.8.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\DomainName.PL\DomainName.PL.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel.Queries\DomainName.ReadModel.Queries.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel\DomainName.ReadModel.csproj" />
+    <ProjectReference Include="..\DomainName.WebApi.ServiceModel\DomainName.WebApi.ServiceModel.csproj" />
+  </ItemGroup>
+
+</Project>
