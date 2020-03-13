@@ -83,7 +83,6 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="DomainName.ReadModel.Queries.Tests.v3.ncrunchproject">DomainName.ReadModel.Queries.Tests.v3.ncrunchproject</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="NLog.config">NLog.config</ProjectItem>
-      <ProjectItem ReplaceParameters="false" TargetFileName="starnetAuthApp.pfx">starnetAuthApp.pfx</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

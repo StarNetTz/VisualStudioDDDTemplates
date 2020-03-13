@@ -21,7 +21,6 @@
       <ProjectItem ReplaceParameters="false" TargetFileName="Dockerfile">Dockerfile</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="DomainName.App.v3.ncrunchproject">DomainName.App.v3.ncrunchproject</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Host.cs">Host.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="license.xml">license.xml</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
     </Project>
   </TemplateContent>
