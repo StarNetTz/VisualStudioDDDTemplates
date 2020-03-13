@@ -11,8 +11,8 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Starnet.Aggregates" Version="6.0.0" />
-    <PackageReference Include="Starnet.Aggregates.Testing" Version="6.0.0" />
+    <PackageReference Include="Starnet.Aggregates" Version="6.0.2" />
+    <PackageReference Include="Starnet.Aggregates.Testing" Version="6.0.2" />
   </ItemGroup>
 
   <ItemGroup>
