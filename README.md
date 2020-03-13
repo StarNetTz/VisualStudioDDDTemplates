@@ -1,9 +1,15 @@
 # VisualStudioDDDTemplates
 Starnet DDD templates for VS 2019
-# Usage
-Copy StarnetDDD.zip from templates\SolutionTemplates to C:\Users\*Username*\Documents\Visual Studio 2019\Templates\ProjectTemplates\Visual C#
+## Usage
+Copy StarnetDDD.zip from:
+  templates\SolutionTemplates
+to
+  C:\Users\*Username*\Documents\Visual Studio 2019\Templates\ProjectTemplates\Visual C#
 
-Install ItemTemplates by copying them from templates\ItemTemplates to C:\Users\*Username*\Documents\Visual Studio 2019\Templates\ItemTemplates\Visual C#
+Install ItemTemplates by copying them from:
+  templates\ItemTemplates
+to
+  C:\Users\*Username*\Documents\Visual Studio 2019\Templates\ItemTemplates\Visual C#
 
 
 Create new project by choosing Starnet DDD template.
@@ -14,5 +20,5 @@ Add new aggregate by following these steps:
 3. Add new StarnetDDD Aggregate Tests item to Solution.Domain.Tests project
 4. Replace _DOMAIN_ marker with SolutionName
 
-NCrunch is recomemnded for live tests. Exclude integration tests.
+NCrunch is recommended for live tests. Remember to exclude integration tests.
 You will need to provide servicestack licence and NSBus license.xml files as needed.
