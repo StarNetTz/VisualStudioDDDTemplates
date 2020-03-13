@@ -51,12 +51,10 @@
           <Folder Name="unix" TargetFolderName="unix">
             <Folder Name="lib" TargetFolderName="lib">
               <Folder Name="netcoreapp2.1" TargetFolderName="netcoreapp2.1" />
-              <Folder Name="netstandard2.0" TargetFolderName="netstandard2.0" />
             </Folder>
           </Folder>
           <Folder Name="win" TargetFolderName="win">
             <Folder Name="lib" TargetFolderName="lib">
-              <Folder Name="netcoreapp2.0" TargetFolderName="netcoreapp2.0" />
               <Folder Name="netcoreapp2.1" TargetFolderName="netcoreapp2.1" />
               <Folder Name="netstandard2.0" TargetFolderName="netstandard2.0" />
             </Folder>
@@ -85,7 +83,6 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
       <ProjectItem ReplaceParameters="false" TargetFileName="DomainName.ReadModel.Queries.Tests.v3.ncrunchproject">DomainName.ReadModel.Queries.Tests.v3.ncrunchproject</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="NLog.config">NLog.config</ProjectItem>
-      <ProjectItem ReplaceParameters="false" TargetFileName="starnetAuthApp.pfx">starnetAuthApp.pfx</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

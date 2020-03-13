@@ -22,7 +22,6 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="NLog.config">NLog.config</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="Program.cs">Program.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="ServiceInstance.cs">ServiceInstance.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="false" TargetFileName="starnetAuthApp.pfx">starnetAuthApp.pfx</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>
