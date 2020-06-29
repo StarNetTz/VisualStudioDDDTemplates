@@ -15,8 +15,6 @@ namespace DomainName.WebApi.ServiceInterface.QueryServices
         }
 
         public async Task<object> Any(GetLookup req)
-        {
-            return await QueryById.GetById(req.Id);
-        }
+            => await QueryById.GetById(req.Id);
     }
 }

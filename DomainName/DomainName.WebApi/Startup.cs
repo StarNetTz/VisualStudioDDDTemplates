@@ -28,9 +28,7 @@ namespace DomainName.WebApi
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
-            {
                 app.UseDeveloperExceptionPage();
-            }
 
             app.UseServiceStack(new AppHost(Configuration)
             {
@@ -44,7 +42,7 @@ namespace DomainName.WebApi
         public AppHost(IConfiguration configuration) : base("DomainName.WebApi", typeof(MyServices).Assembly)
         {
             Configuration = configuration;
-            //Licensing.RegisterLicense(Configuration["ServiceStack:Licence"]);
+            Licensing.RegisterLicense(Configuration["ServiceStack:Licence"]);
         }
 
         // Configure your AppHost with the necessary configuration and dependencies your App needs
@@ -80,10 +78,10 @@ namespace DomainName.WebApi
             {
                 var simpleContainer = new SimpleInjector.Container();
                 simpleContainer.Register(() => CreateRavenDbDocumentStore(), SimpleInjector.Lifestyle.Singleton);
+                simpleContainer.Register(() => Configuration, SimpleInjector.Lifestyle.Singleton);
                 simpleContainer.Register<IOrganizationSmartSearchQuery, OrganizationSmartSearchQuery>();
                 simpleContainer.Register<ITimeProvider, TimeProvider>();
                 simpleContainer.Register<ITypeaheadSmartSearchQuery, TypeaheadSmartSearchQuery>();
-                simpleContainer.Register<IDatabaseInitializer, DatabaseInitializer>();
                 simpleContainer.Register<IMessageBus, NSBus>();
                 simpleContainer.Register<ICacheClient>(() => new MemoryCacheClient());
                 simpleContainer.Register(typeof(IQueryById<>), typeof(QueryById<>));
@@ -102,8 +100,6 @@ namespace DomainName.WebApi
                 }
 
         string[] GetOriginWhiteList()
-        {
-            return Configuration["CORS:Whitelist"].Split(';');
-        }
+            => Configuration["CORS:Whitelist"].Split(';');
     }
 }

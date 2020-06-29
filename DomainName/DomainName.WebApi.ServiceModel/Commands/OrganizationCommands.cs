@@ -1,4 +1,5 @@
-﻿using ServiceStack;
+﻿using DomainName.PL;
+using ServiceStack;
 
 namespace DomainName.WebApi.ServiceModel
 {

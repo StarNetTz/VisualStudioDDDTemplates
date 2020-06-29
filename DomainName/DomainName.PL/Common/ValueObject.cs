@@ -9,16 +9,12 @@ namespace DomainName.PL
         public static bool operator ==(ValueObject left, ValueObject right)
         {
             if (ReferenceEquals(left, null) ^ ReferenceEquals(right, null))
-            {
                 return false;
-            }
             return ReferenceEquals(left, null) || left.Equals(right);
         }
 
         public static bool operator !=(ValueObject left, ValueObject right)
-        {
-            return !(left == right);
-        }
+            => !(left == right);
 
         protected abstract IEnumerable<object> GetAtomicValues();
 
@@ -34,24 +30,18 @@ namespace DomainName.PL
             {
                 if (ReferenceEquals(thisValues.Current, null) ^
                     ReferenceEquals(otherValues.Current, null))
-                {
                     return false;
-                }
 
                 if (thisValues.Current != null &&
                     !thisValues.Current.Equals(otherValues.Current))
-                {
                     return false;
-                }
             }
             return !thisValues.MoveNext() && !otherValues.MoveNext();
         }
 
         public override int GetHashCode()
-        {
-            return GetAtomicValues()
+            => GetAtomicValues()
              .Select(x => x != null ? x.GetHashCode() : 0)
              .Aggregate((x, y) => x ^ y);
-        }
     }
 }

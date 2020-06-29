@@ -1,6 +1,5 @@
-﻿using DomainName.WebApi.ServiceModel;
+﻿using DomainName.PL;
 using ServiceStack.FluentValidation;
-using System;
 
 namespace DomainName.WebApi.ServiceInterface
 {

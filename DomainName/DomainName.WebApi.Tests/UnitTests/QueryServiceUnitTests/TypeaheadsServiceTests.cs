@@ -43,10 +43,6 @@ namespace DomainName.WebApi.Tests.UnitTests.QueryServiceUnitTests
     class MockTypeaheadSmartSearchQuery : ITypeaheadSmartSearchQuery
     {
         public Task<PaginatedResult<TypeaheadItem>> Execute(ISmartSearchQueryRequest qry)
-        {
-            return Task.FromResult(new PaginatedResult<TypeaheadItem>());
-        }
+            => Task.FromResult(new PaginatedResult<TypeaheadItem>());
     }
-
-
 }

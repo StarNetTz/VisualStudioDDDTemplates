@@ -4,22 +4,20 @@ namespace DomainName.WebApi
 {
     public class SimpleInjectorIocAdapter : IContainerAdapter
     {
-        private readonly SimpleInjector.Container container;
+        readonly SimpleInjector.Container Container;
 
         public SimpleInjectorIocAdapter(SimpleInjector.Container container)
         {
-            this.container = container;
+            Container = container;
         }
 
         public T Resolve<T>()
-        {
-            return (T)this.container.GetInstance(typeof(T));
-        }
+            => (T)Container.GetInstance(typeof(T));
 
         public T TryResolve<T>()
         {
-            var registration = this.container.GetRegistration(typeof(T));
-            return registration == null ? default(T) : (T)registration.GetInstance();
+            var registration = Container.GetRegistration(typeof(T));
+            return registration == null ? default : (T)registration.GetInstance();
         }
     }
 }

@@ -8,7 +8,7 @@ namespace DomainName.WebApi.Tests
 {
     public class UnitTest
     {
-        private readonly ServiceStackHost appHost;
+        readonly ServiceStackHost appHost;
 
         public UnitTest()
         {

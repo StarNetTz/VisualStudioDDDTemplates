@@ -5,22 +5,20 @@ namespace DomainName.WebApi.Tests
 {
     public class SimpleInjectorIocAdapter : IContainerAdapter
     {
-        private readonly Container container;
+        readonly Container Container;
 
         public SimpleInjectorIocAdapter(Container container)
         {
-            this.container = container;
+            Container = container;
         }
 
         public T Resolve<T>()
-        {
-            return (T)this.container.GetInstance(typeof(T));
-        }
+            => (T)Container.GetInstance(typeof(T));
 
         public T TryResolve<T>()
         {
-            var registration = this.container.GetRegistration(typeof(T));
-            return registration == null ? default(T) : (T)registration.GetInstance();
+            var registration = Container.GetRegistration(typeof(T));
+            return registration == null ? default : (T)registration.GetInstance();
         }
     }
 }

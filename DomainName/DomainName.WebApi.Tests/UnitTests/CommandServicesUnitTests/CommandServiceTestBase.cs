@@ -44,17 +44,13 @@ namespace DomainName.WebApi.Tests
         public class StubMessageBus : IMessageBus
         {
             public Task Send(object message)
-            {
-                return Task.CompletedTask;
-            }
+                => Task.CompletedTask;
         }
 
         public class StubTimeProvider : ITimeProvider
         {
             public DateTime GetUtcTime()
-            {
-                return DateTime.MinValue;
-            }
+                => DateTime.MinValue;
         }
     }
 }

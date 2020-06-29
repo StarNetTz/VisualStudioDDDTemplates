@@ -4,6 +4,7 @@ using ServiceStack.FluentValidation.Results;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace DomainName.WebApi.Tests
 {
@@ -16,9 +17,9 @@ namespace DomainName.WebApi.Tests
             Validator = validator;
         }
 
-        protected void AssertRuleBroken(T obj, string property, string errorCode)
+        protected async Task AssertRuleBroken(T obj, string property, string errorCode)
         {
-            var res = Validator.Validate(obj);
+            var res = await Validator.ValidateAsync(obj);
             AssertPropertyInvalid(res.Errors, property, errorCode);
         }
 
