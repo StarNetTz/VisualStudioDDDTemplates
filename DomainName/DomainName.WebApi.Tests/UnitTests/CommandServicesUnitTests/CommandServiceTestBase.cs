@@ -10,7 +10,6 @@ using System.Threading.Tasks;
 
 namespace DomainName.WebApi.Tests
 {
-    [TestFixture]
     public class CommandServiceTestBase<T> where T : Service
     {
         protected T Service;

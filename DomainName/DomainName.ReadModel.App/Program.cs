@@ -1,5 +1,5 @@
 ﻿using DomainName.ReadModel.Projections;
-using DomainName.ReadModel.Queries;
+using DomainName.ReadModel.Repositories.RavenDB;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

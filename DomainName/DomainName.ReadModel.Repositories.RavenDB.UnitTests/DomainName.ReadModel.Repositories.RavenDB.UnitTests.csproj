@@ -18,13 +18,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.ReadModel.Queries\DomainName.ReadModel.Queries.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel.Repositories.RavenDB\DomainName.ReadModel.Repositories.RavenDB.csproj" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="appsettings.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
     <None Update="NLog.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>

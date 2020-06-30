@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace DomainName.ReadModel.Projections.Tests
 {
-    [TestFixture]
     public class OrganizationRegisteredTests : ProjectionSpecification<OrganizationProjection>
     {
         string Id;

@@ -5,65 +5,67 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "01_PublishedLanguage", "01_PublishedLanguage", "{496814B2-1018-4825-9F8A-4F47E6D583AA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.PL", "DomainName\DomainName.PL\DomainName.PL.csproj", "{CFDDE8EC-42F7-4D2D-B09B-4B16E0A3C0AC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.PL", "DomainName\DomainName.PL\DomainName.PL.csproj", "{CFDDE8EC-42F7-4D2D-B09B-4B16E0A3C0AC}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "02_WriteModel", "02_WriteModel", "{3CF8CAF3-DACC-4F27-BDAF-3678B297A03F}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{00555965-81AE-4625-B85B-77E49783682C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.App", "DomainName\DomainName.App\DomainName.App.csproj", "{83965FCA-F70B-4FBC-A3CB-1F457623D3B0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.App", "DomainName\DomainName.App\DomainName.App.csproj", "{83965FCA-F70B-4FBC-A3CB-1F457623D3B0}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{5A0DA692-A10B-4F9F-9418-272243E2682F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.Domain", "DomainName\DomainName.Domain\DomainName.Domain.csproj", "{594B4B7F-632F-410F-9DFD-465564B51D97}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.Domain", "DomainName\DomainName.Domain\DomainName.Domain.csproj", "{594B4B7F-632F-410F-9DFD-465564B51D97}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.Domain.Tests", "DomainName\DomainName.Domain.Tests\DomainName.Domain.Tests.csproj", "{00ABD456-BDDD-4095-9852-2090C13E828A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.Domain.Tests", "DomainName\DomainName.Domain.Tests\DomainName.Domain.Tests.csproj", "{00ABD456-BDDD-4095-9852-2090C13E828A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "NSBus", "NSBus", "{72C93F27-B9FC-4660-B5DA-693BD0109E16}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.Domain.NSBus", "DomainName\DomainName.Domain.NSBus\DomainName.Domain.NSBus.csproj", "{F3D06751-3F44-4546-875D-EB005DC1644F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.Domain.NSBus", "DomainName\DomainName.Domain.NSBus\DomainName.Domain.NSBus.csproj", "{F3D06751-3F44-4546-875D-EB005DC1644F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.Domain.NSBus.Tests", "DomainName\DomainName.Domain.NSBus.Tests\DomainName.Domain.NSBus.Tests.csproj", "{3186C55F-18AE-4AE8-A98B-60C559A9E5A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.Domain.NSBus.Tests", "DomainName\DomainName.Domain.NSBus.Tests\DomainName.Domain.NSBus.Tests.csproj", "{3186C55F-18AE-4AE8-A98B-60C559A9E5A3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "03_ReadModel", "03_ReadModel", "{60835465-9977-4012-A68A-A6C21FF06C88}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Application", "Application", "{BD0CDE4B-F6A9-4596-9A45-FBD5D6F1FE09}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.ReadModel.App", "DomainName\DomainName.ReadModel.App\DomainName.ReadModel.App.csproj", "{A9E0B15E-D299-4FC2-9D34-A6C154665727}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.ReadModel.App", "DomainName\DomainName.ReadModel.App\DomainName.ReadModel.App.csproj", "{A9E0B15E-D299-4FC2-9D34-A6C154665727}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Model", "Model", "{1EAEDF1E-E22E-4B09-8EF1-3E9B692EF1C5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.ReadModel", "DomainName\DomainName.ReadModel\DomainName.ReadModel.csproj", "{B024CB7C-B114-487F-AEDB-756565ACB592}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.ReadModel", "DomainName\DomainName.ReadModel\DomainName.ReadModel.csproj", "{B024CB7C-B114-487F-AEDB-756565ACB592}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Projections", "Projections", "{6BCC6849-CE88-4717-997B-7127B9E1E955}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.ReadModel.Projections", "DomainName\DomainName.ReadModel.Projections\DomainName.ReadModel.Projections.csproj", "{D40FA7AC-0472-493F-8E3A-CC0551B4B979}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.ReadModel.Projections", "DomainName\DomainName.ReadModel.Projections\DomainName.ReadModel.Projections.csproj", "{D40FA7AC-0472-493F-8E3A-CC0551B4B979}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.ReadModel.Projections.ES", "DomainName\DomainName.ReadModel.Projections.ES\DomainName.ReadModel.Projections.ES.csproj", "{EF1B2F19-09BE-4CC0-8C55-489C6F158547}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.ReadModel.Projections.ES", "DomainName\DomainName.ReadModel.Projections.ES\DomainName.ReadModel.Projections.ES.csproj", "{EF1B2F19-09BE-4CC0-8C55-489C6F158547}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.ReadModel.Projections.Tests", "DomainName\DomainName.ReadModel.Projections.Tests\DomainName.ReadModel.Projections.Tests.csproj", "{D8E88E89-D979-48DA-8F80-304AA8339B96}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.ReadModel.Projections.Tests", "DomainName\DomainName.ReadModel.Projections.Tests\DomainName.ReadModel.Projections.Tests.csproj", "{D8E88E89-D979-48DA-8F80-304AA8339B96}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Queries", "Queries", "{9D70F261-1F29-48A2-AA8D-8C5FB02D5AE9}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.ReadModel.Queries", "DomainName\DomainName.ReadModel.Queries\DomainName.ReadModel.Queries.csproj", "{EF55D186-E016-4683-8C43-F650B0C81761}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.ReadModel.Queries.Tests", "DomainName\DomainName.ReadModel.Queries.Tests\DomainName.ReadModel.Queries.Tests.csproj", "{634D58D8-0CB6-4DED-9862-07731E7A073E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Repositories", "Repositories", "{9D70F261-1F29-48A2-AA8D-8C5FB02D5AE9}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "04_Api", "04_Api", "{6C1F8304-8AEC-4A7E-ABF7-9A79B2361E2D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.WebApi", "DomainName\DomainName.WebApi\DomainName.WebApi.csproj", "{CBC14D9D-C338-493E-B745-3E4794BBA19A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.WebApi", "DomainName\DomainName.WebApi\DomainName.WebApi.csproj", "{CBC14D9D-C338-493E-B745-3E4794BBA19A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.WebApi.Infrastructure", "DomainName\DomainName.WebApi.Infrastructure\DomainName.WebApi.Infrastructure.csproj", "{6FFA03BD-B9C1-4B1E-940E-F43627B92035}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.WebApi.Infrastructure", "DomainName\DomainName.WebApi.Infrastructure\DomainName.WebApi.Infrastructure.csproj", "{6FFA03BD-B9C1-4B1E-940E-F43627B92035}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.WebApi.ServiceInterface", "DomainName\DomainName.WebApi.ServiceInterface\DomainName.WebApi.ServiceInterface.csproj", "{680F3D1E-5E23-420A-ADC3-093D25027C81}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.WebApi.ServiceInterface", "DomainName\DomainName.WebApi.ServiceInterface\DomainName.WebApi.ServiceInterface.csproj", "{680F3D1E-5E23-420A-ADC3-093D25027C81}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.WebApi.ServiceModel", "DomainName\DomainName.WebApi.ServiceModel\DomainName.WebApi.ServiceModel.csproj", "{9CA9B80B-6805-4605-892B-A35DD04D9331}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.WebApi.ServiceModel", "DomainName\DomainName.WebApi.ServiceModel\DomainName.WebApi.ServiceModel.csproj", "{9CA9B80B-6805-4605-892B-A35DD04D9331}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.WebApi.UnitTests", "DomainName\DomainName.WebApi.Tests\DomainName.WebApi.UnitTests.csproj", "{E330EDD2-4378-4113-80A3-8B9FD90EDA23}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.WebApi.UnitTests", "DomainName\DomainName.WebApi.Tests\DomainName.WebApi.UnitTests.csproj", "{E330EDD2-4378-4113-80A3-8B9FD90EDA23}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.WebApi.IntegrationTests", "DomainName\DomainName.WebApi.IntegrationTests\DomainName.WebApi.IntegrationTests.csproj", "{8EEB7B7C-AF1E-403D-946D-9297C71E040A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.WebApi.IntegrationTests", "DomainName\DomainName.WebApi.IntegrationTests\DomainName.WebApi.IntegrationTests.csproj", "{8EEB7B7C-AF1E-403D-946D-9297C71E040A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainName.Domain.Infrastructure", "DomainName\DomainName.Domain.Infrastructure\DomainName.Domain.Infrastructure.csproj", "{07F43F18-DAE1-4274-975B-C021A31AE604}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.Domain.Infrastructure", "DomainName\DomainName.Domain.Infrastructure\DomainName.Domain.Infrastructure.csproj", "{07F43F18-DAE1-4274-975B-C021A31AE604}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.ReadModel.Repositories.RavenDB", "DomainName\DomainName.ReadModel.Repositories.RavenDB\DomainName.ReadModel.Repositories.RavenDB.csproj", "{7925AB8C-3E71-41C6-B7E6-FA69719D344B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.ReadModel.Repositories.RavenDB.IntegrationTests", "DomainName\DomainName.ReadModel.Repositories.RavenDB.IntegrationTests\DomainName.ReadModel.Repositories.RavenDB.IntegrationTests.csproj", "{E5BCCAFC-9C07-4C75-B302-CEE770B8B46D}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DomainName.ReadModel.Repositories.RavenDB.UnitTests", "DomainName\DomainName.ReadModel.Repositories.RavenDB.UnitTests\DomainName.ReadModel.Repositories.RavenDB.UnitTests.csproj", "{55AA4BED-A028-464D-90A3-269731BD8F3F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -115,14 +117,6 @@ Global
 		{D8E88E89-D979-48DA-8F80-304AA8339B96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D8E88E89-D979-48DA-8F80-304AA8339B96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D8E88E89-D979-48DA-8F80-304AA8339B96}.Release|Any CPU.Build.0 = Release|Any CPU
-		{EF55D186-E016-4683-8C43-F650B0C81761}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{EF55D186-E016-4683-8C43-F650B0C81761}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{EF55D186-E016-4683-8C43-F650B0C81761}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{EF55D186-E016-4683-8C43-F650B0C81761}.Release|Any CPU.Build.0 = Release|Any CPU
-		{634D58D8-0CB6-4DED-9862-07731E7A073E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{634D58D8-0CB6-4DED-9862-07731E7A073E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{634D58D8-0CB6-4DED-9862-07731E7A073E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{634D58D8-0CB6-4DED-9862-07731E7A073E}.Release|Any CPU.Build.0 = Release|Any CPU
 		{CBC14D9D-C338-493E-B745-3E4794BBA19A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{CBC14D9D-C338-493E-B745-3E4794BBA19A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CBC14D9D-C338-493E-B745-3E4794BBA19A}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -151,6 +145,18 @@ Global
 		{07F43F18-DAE1-4274-975B-C021A31AE604}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{07F43F18-DAE1-4274-975B-C021A31AE604}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{07F43F18-DAE1-4274-975B-C021A31AE604}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7925AB8C-3E71-41C6-B7E6-FA69719D344B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7925AB8C-3E71-41C6-B7E6-FA69719D344B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7925AB8C-3E71-41C6-B7E6-FA69719D344B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7925AB8C-3E71-41C6-B7E6-FA69719D344B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5BCCAFC-9C07-4C75-B302-CEE770B8B46D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5BCCAFC-9C07-4C75-B302-CEE770B8B46D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5BCCAFC-9C07-4C75-B302-CEE770B8B46D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5BCCAFC-9C07-4C75-B302-CEE770B8B46D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{55AA4BED-A028-464D-90A3-269731BD8F3F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{55AA4BED-A028-464D-90A3-269731BD8F3F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{55AA4BED-A028-464D-90A3-269731BD8F3F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{55AA4BED-A028-464D-90A3-269731BD8F3F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -174,8 +180,6 @@ Global
 		{EF1B2F19-09BE-4CC0-8C55-489C6F158547} = {6BCC6849-CE88-4717-997B-7127B9E1E955}
 		{D8E88E89-D979-48DA-8F80-304AA8339B96} = {6BCC6849-CE88-4717-997B-7127B9E1E955}
 		{9D70F261-1F29-48A2-AA8D-8C5FB02D5AE9} = {60835465-9977-4012-A68A-A6C21FF06C88}
-		{EF55D186-E016-4683-8C43-F650B0C81761} = {9D70F261-1F29-48A2-AA8D-8C5FB02D5AE9}
-		{634D58D8-0CB6-4DED-9862-07731E7A073E} = {9D70F261-1F29-48A2-AA8D-8C5FB02D5AE9}
 		{CBC14D9D-C338-493E-B745-3E4794BBA19A} = {6C1F8304-8AEC-4A7E-ABF7-9A79B2361E2D}
 		{6FFA03BD-B9C1-4B1E-940E-F43627B92035} = {6C1F8304-8AEC-4A7E-ABF7-9A79B2361E2D}
 		{680F3D1E-5E23-420A-ADC3-093D25027C81} = {6C1F8304-8AEC-4A7E-ABF7-9A79B2361E2D}
@@ -183,6 +187,9 @@ Global
 		{E330EDD2-4378-4113-80A3-8B9FD90EDA23} = {6C1F8304-8AEC-4A7E-ABF7-9A79B2361E2D}
 		{8EEB7B7C-AF1E-403D-946D-9297C71E040A} = {6C1F8304-8AEC-4A7E-ABF7-9A79B2361E2D}
 		{07F43F18-DAE1-4274-975B-C021A31AE604} = {5A0DA692-A10B-4F9F-9418-272243E2682F}
+		{7925AB8C-3E71-41C6-B7E6-FA69719D344B} = {9D70F261-1F29-48A2-AA8D-8C5FB02D5AE9}
+		{E5BCCAFC-9C07-4C75-B302-CEE770B8B46D} = {9D70F261-1F29-48A2-AA8D-8C5FB02D5AE9}
+		{55AA4BED-A028-464D-90A3-269731BD8F3F} = {9D70F261-1F29-48A2-AA8D-8C5FB02D5AE9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {A5539472-8DD0-4F78-B254-6AA40A92F24B}

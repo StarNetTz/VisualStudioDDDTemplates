@@ -1,7 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DomainName.ReadModel.Repositories.RavenDB;
+using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 
-namespace DomainName.ReadModel.Queries.Tests.IntegrationTests
+namespace DomainName.ReadModel.Repositories.RavenDB.IntegrationTests
 {
     class RavenDbIntegrationTests
     {

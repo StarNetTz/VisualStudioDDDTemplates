@@ -38,7 +38,7 @@ namespace DomainName.Domain.Organization
 
         internal void CorrectOrganizationName(CorrectOrganizationName c)
         {
-            if (State.Name == c.Name)
+            if (IsIdempotent(c))
                 return;
             var e = new OrganizationNameCorrected()
             {
@@ -49,5 +49,8 @@ namespace DomainName.Domain.Organization
             };
             Apply(e);
         }
+
+            bool IsIdempotent(CorrectOrganizationName c)
+                => c.Name == State.Name;
     }
 }

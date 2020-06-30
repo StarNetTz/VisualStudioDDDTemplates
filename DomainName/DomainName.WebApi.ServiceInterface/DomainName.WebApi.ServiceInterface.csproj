@@ -10,7 +10,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\DomainName.PL\DomainName.PL.csproj" />
-    <ProjectReference Include="..\DomainName.ReadModel.Queries\DomainName.ReadModel.Queries.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel.Repositories.RavenDB\DomainName.ReadModel.Repositories.RavenDB.csproj" />
     <ProjectReference Include="..\DomainName.ReadModel\DomainName.ReadModel.csproj" />
     <ProjectReference Include="..\DomainName.WebApi.ServiceModel\DomainName.WebApi.ServiceModel.csproj" />
   </ItemGroup>

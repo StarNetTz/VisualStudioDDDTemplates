@@ -1,4 +1,5 @@
 ﻿using DomainName.PL;
+
 namespace DomainName.ReadModel
 {
     public class Organization

@@ -1,10 +1,8 @@
-﻿using Microsoft.Extensions.Configuration;
+﻿using DomainName.ReadModel.Repositories.RavenDB;
+using Microsoft.Extensions.Configuration;
 using Raven.Client.Documents;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
-namespace DomainName.ReadModel.Queries.Tests.IntegrationTests
+namespace DomainName.ReadModel.Repositories.RavenDB.IntegrationTests
 {
     public class QueryIntegrationTestBase
     {

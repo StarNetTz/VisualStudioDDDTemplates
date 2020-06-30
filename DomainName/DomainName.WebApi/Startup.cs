@@ -6,7 +6,7 @@ using Funq;
 using ServiceStack;
 using DomainName.WebApi.ServiceInterface;
 using DomainName.ReadModel;
-using DomainName.ReadModel.Queries;
+using DomainName.ReadModel.Repositories.RavenDB;
 using DomainName.WebApi.Infrastructure;
 using ServiceStack.Validation;
 using ServiceStack.Auth;

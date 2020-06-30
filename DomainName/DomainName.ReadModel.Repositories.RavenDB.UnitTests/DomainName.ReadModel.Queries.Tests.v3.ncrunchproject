@@ -2,10 +2,10 @@
   <Settings>
     <IgnoredTests>
       <FixtureTestSelector>
-        <FixtureName>DomainName.ReadModel.Queries.Tests.IntegrationTests.OrganizationSmartSearchQueryIntegrationTests</FixtureName>
+        <FixtureName>DomainName.ReadModel.Repositories.RavenDB.Tests.IntegrationTests.OrganizationSmartSearchQueryIntegrationTests</FixtureName>
       </FixtureTestSelector>
       <FixtureTestSelector>
-        <FixtureName>DomainName.ReadModel.Queries.Tests.IntegrationTests.RavenDbIntegrationTests</FixtureName>
+        <FixtureName>DomainName.ReadModel.Repositories.RavenDB.Tests.IntegrationTests.RavenDbIntegrationTests</FixtureName>
       </FixtureTestSelector>
     </IgnoredTests>
     <IgnoreThisComponentCompletely>False</IgnoreThisComponentCompletely>

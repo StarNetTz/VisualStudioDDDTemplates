@@ -4,9 +4,9 @@ using Raven.Client.Documents.Indexes;
 using Raven.TestDriver;
 using System.Threading.Tasks;
 
-namespace DomainName.ReadModel.Queries.Tests.UnitTests
+namespace DomainName.ReadModel.Repositories.RavenDB.UnitTests
 {
-    class OrganizationSmartSearchQueryUnitTests : RavenTestDriver
+    class TypeaheadSmartSearchQueryUnitTests : RavenTestDriver
     {
         IDocumentStore DocumentStore;
 
@@ -37,9 +37,17 @@ namespace DomainName.ReadModel.Queries.Tests.UnitTests
         [Test]
         public async Task CanExecute()
         {
-            var qry = new OrganizationSmartSearchQuery(DocumentStore);
-            var res = await qry.Execute(new SmartSearchQueryRequest { Qry = "*", CurrentPage = 0, PageSize = 10 });
+            var qry = new TypeaheadSmartSearchQuery(DocumentStore);
+            var res = await qry.Execute(new SmartSearchQueryRequest { Collection = TypeaheadSmartSearchQuery.OrganizationsCollectionName, Qry = "*", CurrentPage = 0, PageSize = 10 });
             Assert.That(res.Data.Count, Is.EqualTo(2));
+        }
+
+
+        [Test]
+        public void unrecognized_collection_throws_argument_exception()
+        {
+            var qry = new TypeaheadSmartSearchQuery(DocumentStore);
+            Assert.That(async () => { await qry.Execute(new SmartSearchQueryRequest { Collection = "unrecognized", Qry = "*", CurrentPage = 0, PageSize = 10 }); }, Throws.ArgumentException);
         }
 
         [Test]

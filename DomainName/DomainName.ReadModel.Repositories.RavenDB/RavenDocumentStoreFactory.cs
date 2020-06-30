@@ -9,7 +9,7 @@ using Raven.Client.ServerWide.Operations;
 using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace DomainName.ReadModel.Queries
+namespace DomainName.ReadModel.Repositories.RavenDB
 {
     public class RavenConfig
     {
@@ -47,31 +47,31 @@ namespace DomainName.ReadModel.Queries
             return store;
         }
 
-        void EnsureDatabaseExists(IDocumentStore store, string database = null, bool createDatabaseIfNotExists = true)
-        {
-            database = database ?? store.Database;
-
-            if (string.IsNullOrWhiteSpace(database))
-                throw new ArgumentException("Value cannot be null or whitespace.", nameof(database));
-
-            try
+            void EnsureDatabaseExists(IDocumentStore store, string database = null, bool createDatabaseIfNotExists = true)
             {
-                store.Maintenance.ForDatabase(database).Send(new GetStatisticsOperation());
-            }
-            catch (DatabaseDoesNotExistException)
-            {
-                if (createDatabaseIfNotExists == false)
-                    throw;
+                database = database ?? store.Database;
+
+                if (string.IsNullOrWhiteSpace(database))
+                    throw new ArgumentException("Value cannot be null or whitespace.", nameof(database));
 
                 try
                 {
-                    store.Maintenance.Server.Send(new CreateDatabaseOperation(new DatabaseRecord(database)));
+                    store.Maintenance.ForDatabase(database).Send(new GetStatisticsOperation());
                 }
-                catch (ConcurrencyException)
+                catch (DatabaseDoesNotExistException)
                 {
-                    // The database was already created before calling CreateDatabaseOperation
+                    if (createDatabaseIfNotExists == false)
+                        throw;
+
+                    try
+                    {
+                        store.Maintenance.Server.Send(new CreateDatabaseOperation(new DatabaseRecord(database)));
+                    }
+                    catch (ConcurrencyException)
+                    {
+                        // The database was already created before calling CreateDatabaseOperation
+                    }
                 }
             }
-        }
     }
 }
