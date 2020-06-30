@@ -1,8 +1,6 @@
 ﻿using DomainName.PL.Commands;
 using Starnet.Aggregates;
 using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DomainName.Domain.Organization
@@ -33,6 +31,8 @@ namespace DomainName.Domain.Organization
         async Task IdempotentlyUpdateAgg(string id, Action<OrganizationAggregate> usingThisMethod)
         {
             var agg = await AggRepository.GetAsync<OrganizationAggregate>(id);
+            if (agg == null)
+                throw DomainError.Named("OrganizationDoesNotExist", string.Empty);
             var ov = agg.Version;
             usingThisMethod(agg);
             PublishedEvents = agg.PublishedEvents;
@@ -41,18 +41,12 @@ namespace DomainName.Domain.Organization
         }
 
         public override async Task Execute(object command)
-        {
-            await When((dynamic)command);
-        }
+            => await When((dynamic)command);
 
             async Task When(RegisterOrganization c)
-            {
-                await IdempotentlyCreateAgg(c.Id, agg => agg.RegisterOrganization(c));
-            }
+                => await IdempotentlyCreateAgg(c.Id, agg => agg.RegisterOrganization(c));
 
             async Task When(CorrectOrganizationName c)
-            {
-                await IdempotentlyUpdateAgg(c.Id, agg => agg.CorrectOrganizationName(c));
-            }
+                => await IdempotentlyUpdateAgg(c.Id, agg => agg.CorrectOrganizationName(c));
     }
 }

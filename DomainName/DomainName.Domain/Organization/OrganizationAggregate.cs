@@ -32,14 +32,9 @@ namespace DomainName.Domain.Organization
             };
             Apply(e);
         }
+        
             bool IsIdempotent(RegisterOrganization c)
-            {
-                return (
-                        (c.Id == State.Id) &&
-                        (c.Name == State.Name) &&
-                        (c.Address == State.Address)
-                    );
-            }
+                => (c.Id, c.Name, c.Address) == (State.Id, c.Name, c.Address);
 
         internal void CorrectOrganizationName(CorrectOrganizationName c)
         {

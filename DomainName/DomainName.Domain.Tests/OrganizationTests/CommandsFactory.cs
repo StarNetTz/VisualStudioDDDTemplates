@@ -6,8 +6,7 @@ namespace DomainName.Domain.Tests.OrganizationTests
     public class CommandsFactory
     {
         public static RegisterOrganization CreateRegisterOrganizationCommand(string id)
-        {
-            return new RegisterOrganization()
+            => new RegisterOrganization()
             {
                 Id = id,
                 IssuedBy = "zeko",
@@ -22,17 +21,14 @@ namespace DomainName.Domain.Tests.OrganizationTests
                     PostalCode = "3021"
                 }
             };
-        }
 
         public static CorrectOrganizationName CreateCorrectOrganizationNameCommand(string id)
-        {
-            return new CorrectOrganizationName()
+            => new CorrectOrganizationName()
             {
                 Id = id,
                 IssuedBy = "zeko",
                 TimeIssued = DateTime.MinValue,
                 Name = "New name"
             };
-        }
     }
 }

@@ -9,9 +9,8 @@ namespace DomainName.PL.Commands
 
     public abstract class Command : ICommand
     {
+        public string Id { get; set; }
         public string IssuedBy { get; set; }
         public DateTime TimeIssued { get; set; }
-
-        public string Id { get; set; }
     }
 }

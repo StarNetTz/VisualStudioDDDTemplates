@@ -17,8 +17,7 @@ namespace DomainName.Domain.Tests.OrganizationTests
             await svc.Execute(cmd).ConfigureAwait(false);
             var publishedEvents = svc.GetPublishedEvents();
             var arr = (repository.Appended != null) ? repository.Appended.Cast<IEvent>().ToArray() : null;
-            var res = new ExecuteCommandResult<IEvent> { ProducedEvents = arr ?? new IEvent[0], PublishedEvents = publishedEvents.Cast<IEvent>().ToArray() };
-            return res;
+            return new ExecuteCommandResult<IEvent> { ProducedEvents = arr ?? new IEvent[0], PublishedEvents = publishedEvents.Cast<IEvent>().ToArray() };
         }
     }
 }

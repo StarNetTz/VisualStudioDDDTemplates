@@ -8,9 +8,7 @@ namespace DomainName.WebApi.Infrastructure
     public class NSBus : IMessageBus
     {
         public async Task Send(object message)
-        {
-            await NSBusSingleton.DomainNameAppEndpointInstance.Send(message);
-        }
+            => await NSBusSingleton.DomainNameAppEndpointInstance.Send(message);
     }
 
     class NSBusSingleton
@@ -19,7 +17,6 @@ namespace DomainName.WebApi.Infrastructure
 
         static NSBusSingleton()
         {
-
             DomainNameAppEndpointInstance = Endpoint.Start(CreateEndpointConfiguration()).GetAwaiter().GetResult();
         }
 
@@ -41,11 +38,8 @@ namespace DomainName.WebApi.Infrastructure
             var conventions = endpointConfiguration.Conventions();
             conventions.DefiningCommandsAs(
                 type =>
-                {
-                    return (
-                    (type.Namespace == "DomainName.PL.Commands")
-                    );
-                });
+                    type.Namespace == "DomainName.PL.Commands"
+                );
 
             endpointConfiguration.SendOnly();
             endpointConfiguration.EnableInstallers();
