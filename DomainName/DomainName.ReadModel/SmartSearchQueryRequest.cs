@@ -8,7 +8,7 @@
         int PageSize { get; }
     }
 
-    public class SmartShearchQueryRequest : ISmartSearchQueryRequest
+    public class SmartSearchQueryRequest : ISmartSearchQueryRequest
     {
         public string Collection { get; set; }
         public string Qry { get; set; }

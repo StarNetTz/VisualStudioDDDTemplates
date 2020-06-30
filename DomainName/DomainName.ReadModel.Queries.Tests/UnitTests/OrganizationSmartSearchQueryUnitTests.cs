@@ -38,7 +38,7 @@ namespace DomainName.ReadModel.Queries.Tests.UnitTests
         public async Task CanExecute()
         {
             var qry = new OrganizationSmartSearchQuery(DocumentStore);
-            var res = await qry.Execute(new SmartShearchQueryRequest { Qry = "*", CurrentPage = 0, PageSize = 10 });
+            var res = await qry.Execute(new SmartSearchQueryRequest { Qry = "*", CurrentPage = 0, PageSize = 10 });
             Assert.That(res.Data.Count, Is.EqualTo(2));
         }
 
@@ -46,7 +46,7 @@ namespace DomainName.ReadModel.Queries.Tests.UnitTests
         public async Task OverflownQueryReturnsFirstPage()
         {
             var qry = new OrganizationSmartSearchQuery(DocumentStore);
-            var res = await qry.Execute(new SmartShearchQueryRequest { Qry = "*", CurrentPage = 100, PageSize = 10 });
+            var res = await qry.Execute(new SmartSearchQueryRequest { Qry = "*", CurrentPage = 100, PageSize = 10 });
             Assert.That(res.Data.Count, Is.EqualTo(2));
         }
 

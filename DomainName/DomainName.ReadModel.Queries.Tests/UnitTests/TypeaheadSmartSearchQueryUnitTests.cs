@@ -38,7 +38,7 @@ namespace DomainName.ReadModel.Queries.Tests.UnitTests
         public async Task CanExecute()
         {
             var qry = new TypeaheadSmartSearchQuery(DocumentStore);
-            var res = await qry.Execute(new SmartShearchQueryRequest { Collection = TypeaheadSmartSearchQuery.OrganizationsCollectionName, Qry = "*", CurrentPage = 0, PageSize = 10 });
+            var res = await qry.Execute(new SmartSearchQueryRequest { Collection = TypeaheadSmartSearchQuery.OrganizationsCollectionName, Qry = "*", CurrentPage = 0, PageSize = 10 });
             Assert.That(res.Data.Count, Is.EqualTo(2));
         }
 
@@ -47,14 +47,14 @@ namespace DomainName.ReadModel.Queries.Tests.UnitTests
         public void unrecognized_collection_throws_argument_exception()
         {
             var qry = new TypeaheadSmartSearchQuery(DocumentStore);
-            Assert.That(async () => { await qry.Execute(new SmartShearchQueryRequest { Collection = "unrecognized", Qry = "*", CurrentPage = 0, PageSize = 10 }); }, Throws.ArgumentException);
+            Assert.That(async () => { await qry.Execute(new SmartSearchQueryRequest { Collection = "unrecognized", Qry = "*", CurrentPage = 0, PageSize = 10 }); }, Throws.ArgumentException);
         }
 
         [Test]
         public async Task OverflownQueryReturnsFirstPage()
         {
             var qry = new OrganizationSmartSearchQuery(DocumentStore);
-            var res = await qry.Execute(new SmartShearchQueryRequest { Qry = "*", CurrentPage = 100, PageSize = 10 });
+            var res = await qry.Execute(new SmartSearchQueryRequest { Qry = "*", CurrentPage = 100, PageSize = 10 });
             Assert.That(res.Data.Count, Is.EqualTo(2));
         }
 

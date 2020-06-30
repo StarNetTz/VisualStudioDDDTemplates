@@ -32,7 +32,7 @@ namespace DomainName.WebApi.ServiceInterface.QueryServices
 
         async Task<object> PerformSmartSearch(FindOrganizations req)
         {
-            var smartSearchRequest = req.ConvertTo<SmartShearchQueryRequest>();
+            var smartSearchRequest = req.ConvertTo<SmartSearchQueryRequest>();
             var res = await Query.Execute(smartSearchRequest);
             return res;
         }

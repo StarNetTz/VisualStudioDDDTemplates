@@ -1,7 +1,4 @@
 ﻿using Raven.Client.Documents;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace DomainName.ReadModel.Queries
@@ -18,9 +15,7 @@ namespace DomainName.ReadModel.Queries
         public async Task<T> GetById(string id)
         {
             using (var ses = DocumentStore.OpenAsyncSession())
-            {
                 return await ses.LoadAsync<T>(id);
-            }
         }
     }
 }

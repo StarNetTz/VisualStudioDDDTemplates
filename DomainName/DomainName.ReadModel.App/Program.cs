@@ -1,93 +1,65 @@
-﻿using DomainName.ReadModel.Projections.ES;
+﻿using DomainName.ReadModel.Projections;
+using DomainName.ReadModel.Projections.ES;
 using DomainName.ReadModel.Queries;
 using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
 using SimpleInjector;
 using Starnet.Projections;
 using Starnet.Projections.ES;
 using Starnet.Projections.RavenDb;
-using System;
-using System.Threading;
+using System.IO;
+using System.Linq;
+using System.Reflection;
 using System.Threading.Tasks;
 
 namespace DomainName.ReadModel.App
 {
     class Program
     {
-        static SemaphoreSlim semaphore = new SemaphoreSlim(0);
-        static IConfiguration Configuration;
-        static Container Container;
-
         async static Task Main(string[] args)
         {
-            Configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true).Build();
-            Container = CreateDIContainer();
-            await CreateEventStoreProjections();
-            Console.CancelKeyPress += CancelKeyPress;
-            AppDomain.CurrentDomain.ProcessExit += ProcessExit;
-            var srv = Container.GetInstance<ServiceInstance>();
-            await srv.Start(Container);
-            await Console.Out.WriteLineAsync("Press Ctrl+C to exit...");
-            await semaphore.WaitAsync();
+            await CreateHostBuilder(args).Build().RunAsync();
         }
 
-            static Container CreateDIContainer()
-            {
-                var Container = new Container();
-
-                ConfigureLogging(Container);
-                Container.Register<ServiceInstance>();
-                Container.Register<INoSqlStore, RavenDbProjectionsStore>(Lifestyle.Singleton);
-                Container.Register<ISqlStore, RavenDbProjectionsStore>(Lifestyle.Singleton);
-                Container.Register<ICheckpointReader, RavenDbCheckpointReader>();
-                Container.Register<ICheckpointWriter, RavenDbCheckpointWriter>();
-                ConfigureRavenDb(Container);
-
-                Container.Register<IHandlerFactory, DIHandlerFactory>();
-                Container.Register<ISubscriptionFactory, ESSubscriptionFactory>();
-                Container.Register<IProjectionsFactory, ProjectionsFactory>();
-
-                Container.Verify();
-
-                return Container;
-            }
-
-                static void ConfigureLogging(Container Container)
+        static IHostBuilder CreateHostBuilder(string[] args)
+            => Host.CreateDefaultBuilder()
+                .ConfigureServices((hostContext, services) =>
                 {
-                    var loggerFactory = LoggerFactory.Create(builder =>
+                    var docStore = new RavenDocumentStoreFactory().CreateAndInitializeDocumentStore(RavenConfig.FromConfiguration(hostContext.Configuration));
+                    services.AddSingleton(docStore);
+                    services.AddSingleton<INoSqlStore, DefensiveRavenDbProjectionsStore>();
+                    services.AddSingleton<ISqlStore, DefensiveRavenDbProjectionsStore>();
+                    services.AddTransient(typeof(IQueryById<>), typeof(QueryById<>));
+                    services.AddTransient<ICheckpointReader, RavenDbCheckpointReader>();
+                    services.AddTransient<ICheckpointWriter, RavenDbCheckpointWriter>();
+                    services.AddTransient<IHandlerFactory, DIHandlerFactory>();
+                    services.AddTransient<ISubscriptionFactory, ESSubscriptionFactory>();
+                    services.AddTransient<IProjectionsFactory, ProjectionsFactory>();
+                    services.AddTransient<IJSProjectionsFactory, JSProjectionsFactory>();
+
+                    RegisterProjectionHandlers(services);
+
+                    services.AddHostedService<ServiceInstance>();
+                })
+                .ConfigureHostConfiguration(configHost =>
+                {
+                    configHost.SetBasePath(Directory.GetCurrentDirectory());
+                    configHost.AddJsonFile("appsettings.json", optional: false);
+                    configHost.AddEnvironmentVariables(prefix: "STARNET_");
+                    configHost.AddCommandLine(args);
+                });
+
+                    static void RegisterProjectionHandlers(IServiceCollection services)
                     {
-                        builder.AddNLog(new NLogProviderOptions { CaptureMessageTemplates = true, CaptureMessageProperties = true });
-                    });
-                    NLog.LogManager.LoadConfiguration("nlog.config");
-                    Container.Register<ILoggerFactory>(() => loggerFactory, Lifestyle.Singleton);
-                    Container.RegisterConditional(typeof(ILogger), c => typeof(Logger<>).MakeGenericType(c.Consumer.ImplementationType), Lifestyle.Singleton, c => true);
-                }
-
-                static void ConfigureRavenDb(Container Container)
-                {
-                    var docStore = new RavenDocumentStoreFactory().CreateDocumentStore(RavenConfig.FromConfiguration(Configuration));
-                    Container.Register(() => docStore, Lifestyle.Singleton);
-                }
-
-            async static Task CreateEventStoreProjections()
-            {
-                var fact = Container.GetInstance<JSProjectionsFactory>();
-                var defs = EventStoreProjectionDefinitions.CreateEventStoreProjectionSources();
-                foreach (var v in defs)
-                    fact.Projections.Add(v.Key, v.Value);
-                await fact.CreateProjections();
-            }
-
-        static void CancelKeyPress(object sender, ConsoleCancelEventArgs e)
-        {
-            e.Cancel = true;
-            semaphore.Release();
-        }
-
-        static void ProcessExit(object sender, EventArgs e)
-        {
-            semaphore.Release();
-        }
+                        var a = Assembly.GetAssembly(typeof(OrganizationProjectionHandler));
+                        var results = from type in a.GetTypes()
+                                      where typeof(IHandler).IsAssignableFrom(type)
+                                      select type;
+                        foreach (var t in results)
+                            services.AddTransient(t);
+                    }
     }
 }

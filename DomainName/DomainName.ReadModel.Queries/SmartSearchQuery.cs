@@ -18,7 +18,7 @@ namespace DomainName.ReadModel.Queries
             QueryResult<T> qResult = await SearchAsync(qry);
             var resp = CreateResponse(qry, qResult);
             if (CurrentPageIsOverflown(resp))
-                return await Execute(new SmartShearchQueryRequest() { Qry = qry.Qry, CurrentPage = 0, PageSize = qry.PageSize });
+                return await Execute(new SmartSearchQueryRequest() { Qry = qry.Qry, CurrentPage = 0, PageSize = qry.PageSize });
             return resp;
         }
 
@@ -38,8 +38,6 @@ namespace DomainName.ReadModel.Queries
         }
 
         static bool CurrentPageIsOverflown(PaginatedResult<T> result)
-        {
-            return (result.Data.Count == 0) && (result.TotalPages > 0);
-        }
+            => (result.Data.Count == 0) && (result.TotalPages > 0);
     }
 }

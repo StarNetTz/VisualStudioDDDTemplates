@@ -16,7 +16,7 @@ namespace DomainName.WebApi.ServiceInterface.QueryServices
 
         public async Task<object> Any(FilterTypeahead req)
         {
-            return await Query.Execute(req.ConvertTo<SmartShearchQueryRequest>());
+            return await Query.Execute(req.ConvertTo<SmartSearchQueryRequest>());
         }
     }
 }

@@ -9,7 +9,7 @@ namespace DomainName.ReadModel.Queries.Tests.IntegrationTests
         public async Task CanExecute()
         {
             var qry = new OrganizationSmartSearchQuery(DocumentStore);
-            var res = await qry.Execute(new SmartShearchQueryRequest { Qry = "*", CurrentPage = 0, PageSize = 1 });
+            var res = await qry.Execute(new SmartSearchQueryRequest { Qry = "*", CurrentPage = 0, PageSize = 1 });
         }
     }
 }
