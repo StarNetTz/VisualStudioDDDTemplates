@@ -3,6 +3,7 @@ using ServiceStack;
 using DomainName.WebApi.ServiceInterface;
 using DomainName.WebApi.ServiceModel;
 using System.Threading.Tasks;
+using DomainName.PL;
 
 namespace DomainName.WebApi.Tests
 {

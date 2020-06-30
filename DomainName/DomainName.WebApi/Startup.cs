@@ -83,7 +83,7 @@ namespace DomainName.WebApi
                 simpleContainer.Register<ITimeProvider, TimeProvider>();
                 simpleContainer.Register<ITypeaheadSmartSearchQuery, TypeaheadSmartSearchQuery>();
                 simpleContainer.Register<IMessageBus, NSBus>();
-                simpleContainer.Register<ICacheClient>(() => new MemoryCacheClient());
+                simpleContainer.RegisterSingleton<ICacheClient>(() => new MemoryCacheClient());
                 simpleContainer.Register(typeof(IQueryById<>), typeof(QueryById<>));
                 return simpleContainer;
             }

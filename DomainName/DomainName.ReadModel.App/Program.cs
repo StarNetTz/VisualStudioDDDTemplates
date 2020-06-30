@@ -1,12 +1,10 @@
 ﻿using DomainName.ReadModel.Projections;
-using DomainName.ReadModel.Projections.ES;
 using DomainName.ReadModel.Queries;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
 using NLog.Extensions.Logging;
-using SimpleInjector;
+using NServiceBus.Extensions.Logging;
 using Starnet.Projections;
 using Starnet.Projections.ES;
 using Starnet.Projections.RavenDb;
@@ -21,6 +19,8 @@ namespace DomainName.ReadModel.App
     {
         async static Task Main(string[] args)
         {
+            NLog.LogManager.LoadConfiguration("nlog.config");
+            NServiceBus.Logging.LogManager.UseFactory(new ExtensionsLoggerFactory(new NLogLoggerFactory()));
             await CreateHostBuilder(args).Build().RunAsync();
         }
 
