@@ -1,4 +1,5 @@
 ﻿using DomainName.WebApi.ServiceInterface;
+using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using ServiceStack;
 using ServiceStack.Auth;
@@ -18,6 +19,9 @@ namespace DomainName.WebApi.Tests
         [OneTimeSetUp]
         public void ConfigureAppHost()
         {
+            IConfiguration configuration = new ConfigurationBuilder().AddJsonFile("appsettings.json", true, true).Build();
+            Licensing.RegisterLicense(configuration["ServiceStack:Licence"]);
+
             AppHost = new BasicAppHost(typeof(OrganizationService).Assembly)
             {
                 TestMode = true,
