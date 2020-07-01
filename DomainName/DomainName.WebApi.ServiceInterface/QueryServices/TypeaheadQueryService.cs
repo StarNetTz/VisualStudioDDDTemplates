@@ -5,18 +5,14 @@ using System.Threading.Tasks;
 
 namespace DomainName.WebApi.ServiceInterface.QueryServices
 {
-    public class TypeAheadQueryService : Service
+    public class TypeaheadQueryService : Service
     {
         readonly ITypeaheadSmartSearchQuery Query;
 
-        public TypeAheadQueryService(ITypeaheadSmartSearchQuery query)
-        {
-            Query = query;
-        }
+        public TypeaheadQueryService(ITypeaheadSmartSearchQuery query)
+            => Query = query;
 
         public async Task<object> Any(FilterTypeahead req)
-        {
-            return await Query.Execute(req.ConvertTo<SmartSearchQueryRequest>());
-        }
+            => await Query.Execute(req.ConvertTo<SmartSearchQueryRequest>());
     }
 }

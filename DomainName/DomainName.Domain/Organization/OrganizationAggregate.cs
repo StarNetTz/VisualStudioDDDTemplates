@@ -34,7 +34,9 @@ namespace DomainName.Domain.Organization
         }
         
             bool IsIdempotent(RegisterOrganization c)
-                => (c.Id, c.Name, c.Address) == (State.Id, c.Name, c.Address);
+                => c.Id == State.Id 
+                && c.Name == State.Name 
+                && c.Address == State.Address;
 
         internal void CorrectOrganizationName(CorrectOrganizationName c)
         {

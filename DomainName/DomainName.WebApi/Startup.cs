@@ -10,8 +10,8 @@ using DomainName.ReadModel.Repositories.RavenDB;
 using DomainName.WebApi.Infrastructure;
 using ServiceStack.Validation;
 using ServiceStack.Auth;
-using ServiceStack.Caching;
 using Microsoft.Extensions.Hosting;
+using Raven.Client.Documents;
 
 namespace DomainName.WebApi
 {
@@ -22,7 +22,17 @@ namespace DomainName.WebApi
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public new void ConfigureServices(IServiceCollection services)
         {
+            services.AddSingleton(CreateRavenDbDocumentStore());
+            services.AddSingleton(Configuration);
+            services.AddTransient<ITimeProvider, TimeProvider>();
+            services.AddTransient<ITypeaheadSmartSearchQuery, TypeaheadSmartSearchQuery>();
+            services.AddTransient<IMessageBus, NSBus>();
+            services.AddTransient<IOrganizationSmartSearchQuery, OrganizationSmartSearchQuery>();
+            services.AddTransient(typeof(IQueryById<>), typeof(QueryById<>));
         }
+
+            IDocumentStore CreateRavenDbDocumentStore()
+                => new RavenDocumentStoreFactory().CreateAndInitializeDocumentStore(RavenConfig.FromConfiguration(Configuration));
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -39,7 +49,7 @@ namespace DomainName.WebApi
 
     public class AppHost : AppHostBase
     {
-        public AppHost(IConfiguration configuration) : base("DomainName.WebApi", typeof(MyServices).Assembly)
+        public AppHost(IConfiguration configuration) : base("DomainName.WebApi", typeof(OrganizationService).Assembly)
         {
             Configuration = configuration;
             Licensing.RegisterLicense(Configuration["ServiceStack:Licence"]);
@@ -59,8 +69,6 @@ namespace DomainName.WebApi
                 DebugMode = AppSettings.Get(nameof(HostConfig.DebugMode), false)
             });
 
-            container.Adapter = new SimpleInjectorIocAdapter(SetupSimpleInjectorContainer());
-
             Plugins.Add(new ValidationFeature());
             Plugins.Add(new CorsFeature(allowCredentials: true, allowedHeaders: "Content-Type, Authorization", allowOriginWhitelist: GetOriginWhiteList()));
             Plugins.Add(new AuthFeature(() => new AuthUserSession(),
@@ -72,34 +80,9 @@ namespace DomainName.WebApi
                     HashAlgorithm = "HS256"
                 }
             }));
-
         }
-            SimpleInjector.Container SetupSimpleInjectorContainer()
-            {
-                var simpleContainer = new SimpleInjector.Container();
-                simpleContainer.Register(() => CreateRavenDbDocumentStore(), SimpleInjector.Lifestyle.Singleton);
-                simpleContainer.Register(() => Configuration, SimpleInjector.Lifestyle.Singleton);
-                simpleContainer.Register<IOrganizationSmartSearchQuery, OrganizationSmartSearchQuery>();
-                simpleContainer.Register<ITimeProvider, TimeProvider>();
-                simpleContainer.Register<ITypeaheadSmartSearchQuery, TypeaheadSmartSearchQuery>();
-                simpleContainer.Register<IMessageBus, NSBus>();
-                simpleContainer.RegisterSingleton<ICacheClient>(() => new MemoryCacheClient());
-                simpleContainer.Register(typeof(IQueryById<>), typeof(QueryById<>));
-                return simpleContainer;
-            }
 
-                Raven.Client.Documents.IDocumentStore CreateRavenDbDocumentStore()
-                {
-                    var ravenConfig = new RavenConfig { 
-                        Urls = Configuration["RavenDb:Urls"].Split(';'),
-                        CertificateFilePassword = Configuration["RavenDb:CertificatePassword"],
-                        CertificateFilePath = Configuration["RavenDb:CertificatePath"],
-                        DatabaseName = Configuration["RavenDb:DatabaseName"]
-                    };
-                    return new RavenDocumentStoreFactory().CreateDocumentStore(ravenConfig);
-                }
-
-        string[] GetOriginWhiteList()
-            => Configuration["CORS:Whitelist"].Split(';');
+            string[] GetOriginWhiteList()
+                => Configuration["CORS:Whitelist"].Split(';');
     }
 }

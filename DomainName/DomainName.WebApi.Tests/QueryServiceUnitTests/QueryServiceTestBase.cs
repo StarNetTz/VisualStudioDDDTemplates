@@ -3,17 +3,18 @@ using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 using ServiceStack;
 using ServiceStack.Auth;
+using ServiceStack.Configuration;
 using ServiceStack.Testing;
 using ServiceStack.Validation;
-using System;
-using System.Threading.Tasks;
 
-namespace DomainName.WebApi.Tests
+namespace DomainName.WebApi.UnitTests
 {
-    public class CommandServiceTestBase<T> where T : Service
+    public abstract class QueryServiceTestBase<T> where T : Service
     {
         protected T Service;
         protected ServiceStackHost AppHost;
+
+        public abstract IContainerAdapter CreateContainerAdapter();
 
         [OneTimeSetUp]
         public void ConfigureAppHost()
@@ -26,8 +27,6 @@ namespace DomainName.WebApi.Tests
                 TestMode = true,
                 ConfigureContainer = container =>
                 {
-                    container.RegisterAutoWiredAs<StubMessageBus, IMessageBus>();
-                    container.RegisterAutoWiredAs<StubTimeProvider, ITimeProvider>();
                     container.Register<IAuthSession>(c => new AuthUserSession
                     {
                         Email = "mensad@mail.com"
@@ -35,6 +34,7 @@ namespace DomainName.WebApi.Tests
                     container.RegisterValidators(typeof(AddressValidator).Assembly);
                 }
             };
+            AppHost.Container.Adapter = CreateContainerAdapter();
             AppHost.Plugins.Add(new ValidationFeature());
             AppHost.Init();
             Service = AppHost.Container.Resolve<T>();
@@ -43,17 +43,5 @@ namespace DomainName.WebApi.Tests
 
         [OneTimeTearDown]
         public void OneTimeTearDown() => AppHost.Dispose();
-
-        public class StubMessageBus : IMessageBus
-        {
-            public Task Send(object message)
-                => Task.CompletedTask;
-        }
-
-        public class StubTimeProvider : ITimeProvider
-        {
-            public DateTime GetUtcTime()
-                => DateTime.MinValue;
-        }
     }
 }

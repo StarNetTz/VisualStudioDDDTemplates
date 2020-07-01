@@ -1,20 +1,20 @@
 ﻿using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using ServiceStack;
+using System.Threading.Tasks;
 
 namespace DomainName.WebApi
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public async static Task Main(string[] args)
         {
             NLog.LogManager.LoadConfiguration("nlog.config");
-            BuildWebHost(args).Run();
+            await BuildWebHost(args).Build().RunAsync();
         }
 
-        public static IWebHost BuildWebHost(string[] args) =>
+        public static IWebHostBuilder BuildWebHost(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
-                .UseModularStartup<Startup>()
-                .Build();
+                .UseModularStartup<Startup>();
     }
 }

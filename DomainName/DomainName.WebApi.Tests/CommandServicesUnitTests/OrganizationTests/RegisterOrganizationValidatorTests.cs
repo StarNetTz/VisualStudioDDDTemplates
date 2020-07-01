@@ -3,7 +3,7 @@ using DomainName.WebApi.ServiceInterface;
 using DomainName.WebApi.ServiceModel;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.Tests
+namespace DomainName.WebApi.UnitTests
 {
     public class RegisterOrganizationValidatorTests : ValidatorTestBase<RegisterOrganization>
     {

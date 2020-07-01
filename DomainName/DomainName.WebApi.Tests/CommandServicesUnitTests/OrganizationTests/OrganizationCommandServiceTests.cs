@@ -5,7 +5,7 @@ using DomainName.WebApi.ServiceModel;
 using System.Threading.Tasks;
 using DomainName.PL;
 
-namespace DomainName.WebApi.Tests
+namespace DomainName.WebApi.UnitTests
 {
     public class OrganizationCommandServiceTests : CommandServiceTestBase<OrganizationService>
     {
