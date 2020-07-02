@@ -6,7 +6,6 @@ using System.Threading.Tasks;
 
 namespace $safeprojectname$
 {
-    [TestFixture]
     public class OrganizationRegisteredTests : ProjectionSpecification<OrganizationProjection>
     {
         string Id;

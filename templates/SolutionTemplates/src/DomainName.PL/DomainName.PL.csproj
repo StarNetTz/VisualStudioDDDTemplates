@@ -4,4 +4,8 @@
     <TargetFramework>netstandard21</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Events\ve-6E4.tmp" />
+  </ItemGroup>
+
 </Project>

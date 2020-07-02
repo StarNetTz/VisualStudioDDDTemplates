@@ -27,7 +27,7 @@
       <ProjectItem ReplaceParameters="true" TargetFileName="Lookup.cs">Lookup.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="LookupItem.cs">LookupItem.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="PaginatedResult.cs">PaginatedResult.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="SmartShearchQueryRequest.cs">SmartShearchQueryRequest.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="SmartSearchQueryRequest.cs">SmartSearchQueryRequest.cs</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="TypeaheadItem.cs">TypeaheadItem.cs</ProjectItem>
     </Project>
   </TemplateContent>

@@ -1,4 +1,5 @@
-﻿using ServiceStack;
+﻿using $ext_projectname$.PL;
+using ServiceStack;
 
 namespace $safeprojectname$
 {

@@ -4,7 +4,7 @@ using ServiceStack;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$.QueryServices
+namespace $safeprojectname$
 {
     public class OrganizationQueryService : Service
     {
@@ -32,7 +32,7 @@ namespace $safeprojectname$.QueryServices
 
         async Task<object> PerformSmartSearch(FindOrganizations req)
         {
-            var smartSearchRequest = req.ConvertTo<SmartShearchQueryRequest>();
+            var smartSearchRequest = req.ConvertTo<SmartSearchQueryRequest>();
             var res = await Query.Execute(smartSearchRequest);
             return res;
         }

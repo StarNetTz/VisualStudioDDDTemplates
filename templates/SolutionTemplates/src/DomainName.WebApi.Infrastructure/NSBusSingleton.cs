@@ -8,9 +8,7 @@ namespace $safeprojectname$
     public class NSBus : IMessageBus
     {
         public async Task Send(object message)
-        {
-            await NSBusSingleton.DomainNameAppEndpointInstance.Send(message);
-        }
+            => await NSBusSingleton.DomainNameAppEndpointInstance.Send(message);
     }
 
     class NSBusSingleton
@@ -19,7 +17,6 @@ namespace $safeprojectname$
 
         static NSBusSingleton()
         {
-
             DomainNameAppEndpointInstance = Endpoint.Start(CreateEndpointConfiguration()).GetAwaiter().GetResult();
         }
 
@@ -36,16 +33,13 @@ namespace $safeprojectname$
             var routing = transport.Routing();
             routing.RouteToEndpoint(
                 assembly: typeof(PL.Commands.RegisterOrganization).Assembly,
-                destination: config["NSBus:DomainNameAppEndpointName"]);
+                destination: config["NSBus:AppEndpointName"]);
 
             var conventions = endpointConfiguration.Conventions();
             conventions.DefiningCommandsAs(
                 type =>
-                {
-                    return (
-                    (type.Namespace == "DomainName.PL.Commands")
-                    );
-                });
+                    type.Namespace == "$ext_projectname$.PL.Commands"
+                );
 
             endpointConfiguration.SendOnly();
             endpointConfiguration.EnableInstallers();

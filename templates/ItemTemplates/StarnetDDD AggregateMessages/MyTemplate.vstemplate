@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>StarnetDDDAggregateMessages.cs</DefaultName>
+    <Name>StarnetDDD AggregateMessages</Name>
+    <Description>&lt;Create new Command and Event&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem SubType="" TargetFileName="Commands\$fileinputname$Commands.cs" ReplaceParameters="true">CompanyCommands.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="Events\$fileinputname$Events.cs" ReplaceParameters="true">CompanyEvents.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

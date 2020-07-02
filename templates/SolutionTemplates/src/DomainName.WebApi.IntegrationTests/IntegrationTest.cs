@@ -13,7 +13,7 @@ namespace $safeprojectname$
 
         class AppHost : AppSelfHostBase
         {
-            public AppHost() : base(nameof(IntegrationTest), typeof(MyServices).Assembly) { }
+            public AppHost() : base(nameof(IntegrationTest), typeof(OrganizationService).Assembly) { }
 
             public override void Configure(Container container)
             {
@@ -37,9 +37,9 @@ namespace $safeprojectname$
         {
             var client = CreateClient();
 
-            var response = client.Get(new Hello { Name = "World" });
+            var response = client.Get(new FindOrganizations { Id = "Organizations-0" });
 
-            Assert.That(response.Result, Is.EqualTo("Hello, World!"));
+            Assert.That(response, Is.Null);
         }
     }
 }

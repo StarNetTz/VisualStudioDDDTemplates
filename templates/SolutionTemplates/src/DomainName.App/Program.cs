@@ -1,37 +1,38 @@
-﻿using System;
-using System.Threading;
+﻿using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Logging;
+using NLog.Extensions.Logging;
+using NServiceBus;
+using NServiceBus.Extensions.Logging;
+using NServiceBus.Logging;
+using System.IO;
 using System.Threading.Tasks;
 
 namespace $safeprojectname$
 {
     partial class Program
     {
-        static SemaphoreSlim semaphore = new SemaphoreSlim(0);
-
         async static Task Main(string[] args)
         {
-            Console.CancelKeyPress += CancelKeyPress;
-            AppDomain.CurrentDomain.ProcessExit += ProcessExit;
-
-            var host = new Host();
-
-            Console.Title = host.EndpointName;
-
-            await host.Start();
-            await Console.Out.WriteLineAsync("Press Ctrl+C to exit...");
-
-            await semaphore.WaitAsync();
+            NLog.LogManager.LoadConfiguration("nlog.config");
+            LogManager.UseFactory(new ExtensionsLoggerFactory(new NLogLoggerFactory())); 
+            await CreateHostBuilder(args).Build().RunAsync();
         }
 
-        static void CancelKeyPress(object sender, ConsoleCancelEventArgs e)
-        {
-            e.Cancel = true;
-            semaphore.Release();
-        }
-
-        static void ProcessExit(object sender, EventArgs e)
-        {
-            semaphore.Release();
-        }
+            static IHostBuilder CreateHostBuilder(string[] args)
+                => Host.CreateDefaultBuilder()
+                    .ConfigureHostConfiguration(configHost =>
+                    {
+                        configHost.SetBasePath(Directory.GetCurrentDirectory());
+                        configHost.AddJsonFile("appsettings.json", optional: false);
+                        configHost.AddEnvironmentVariables(prefix: "STARNET_");
+                        configHost.AddCommandLine(args);
+                    }).ConfigureLogging(logging =>
+                    {
+                        logging.ClearProviders();
+                        logging.AddNLog();
+                    }).UseNServiceBus(hostBuilderContext =>
+                        new EndpointConfigurationFactory().Create(hostBuilderContext.Configuration)
+                    );
     }
 }
