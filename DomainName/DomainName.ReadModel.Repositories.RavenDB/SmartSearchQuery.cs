@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DomainName.ReadModel.Repositories.RavenDB
+namespace $safeprojectname$
 {
     public abstract class SmartSearchQuery<T>
     {

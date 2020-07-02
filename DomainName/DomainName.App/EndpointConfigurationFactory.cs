@@ -1,4 +1,4 @@
-﻿using DomainName.Domain.Infrastructure;
+﻿using $ext_projectname$.Domain.Infrastructure;
 using EventStore.ClientAPI;
 using Microsoft.Extensions.Configuration;
 using Npgsql;
@@ -7,7 +7,7 @@ using NServiceBus;
 using Starnet.Aggregates.ES;
 using System;
 
-namespace DomainName.App
+namespace $safeprojectname$
 {
     class EndpointConfigurationFactory
     {
@@ -59,7 +59,7 @@ namespace DomainName.App
         static void InitializePostgressPersistence(IConfiguration config, EndpointConfiguration endpointConfiguration)
         {
             var persistence = endpointConfiguration.UsePersistence<SqlPersistence>();
-            persistence.TablePrefix("AppName");
+            persistence.TablePrefix("$ext_projectname$");
 
             var dialect = persistence.SqlDialect<SqlDialect.PostgreSql>();
             dialect.JsonBParameterModifier(
@@ -78,8 +78,8 @@ namespace DomainName.App
         static void SetupConventions(EndpointConfiguration endpointConfiguration)
         {
             var conventions = endpointConfiguration.Conventions();
-            conventions.DefiningCommandsAs(type => type.Namespace == "DomainName.PL.Commands");
-            conventions.DefiningEventsAs(type => type.Namespace == "DomainName.PL.Events");
+            conventions.DefiningCommandsAs(type => type.Namespace == "$ext_projectname$.PL.Commands");
+            conventions.DefiningEventsAs(type => type.Namespace == "$ext_projectname$.PL.Events");
         }
 
         static void SetupAuditing(IConfiguration config, EndpointConfiguration endpointConfiguration)

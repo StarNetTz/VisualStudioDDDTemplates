@@ -1,8 +1,8 @@
-﻿using DomainName.ReadModel.Repositories.RavenDB;
+﻿using $ext_projectname$.ReadModel.Repositories.RavenDB;
 using Microsoft.Extensions.Configuration;
 using NUnit.Framework;
 
-namespace DomainName.ReadModel.Repositories.RavenDB.IntegrationTests
+namespace $safeprojectname$
 {
     class RavenDbIntegrationTests
     {

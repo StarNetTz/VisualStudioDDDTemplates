@@ -1,7 +1,7 @@
 ﻿using ServiceStack.Configuration;
 using SimpleInjector;
 
-namespace DomainName.WebApi.UnitTests
+namespace $safeprojectname$
 {
     public class SimpleInjectorIocAdapter : IContainerAdapter
     {

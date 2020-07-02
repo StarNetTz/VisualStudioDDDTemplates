@@ -4,7 +4,7 @@ using Raven.Client.Documents.Indexes;
 using Raven.TestDriver;
 using System.Threading.Tasks;
 
-namespace DomainName.ReadModel.Repositories.RavenDB.UnitTests
+namespace $safeprojectname$
 {
     class TypeaheadSmartSearchQueryUnitTests : RavenTestDriver
     {

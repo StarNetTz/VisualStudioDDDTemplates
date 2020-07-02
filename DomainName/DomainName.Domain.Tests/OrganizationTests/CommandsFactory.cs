@@ -1,7 +1,7 @@
-﻿using DomainName.PL.Commands;
+﻿using $ext_projectname$.PL.Commands;
 using System;
 
-namespace DomainName.Domain.Tests.OrganizationTests
+namespace $safeprojectname$
 {
     public class CommandsFactory
     {

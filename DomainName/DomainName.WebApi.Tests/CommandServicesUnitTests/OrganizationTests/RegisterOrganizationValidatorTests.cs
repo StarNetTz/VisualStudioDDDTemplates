@@ -1,9 +1,9 @@
 ﻿using NUnit.Framework;
-using DomainName.WebApi.ServiceInterface;
-using DomainName.WebApi.ServiceModel;
+using $ext_projectname$.WebApi.ServiceInterface;
+using $ext_projectname$.WebApi.ServiceModel;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.UnitTests
+namespace $safeprojectname$
 {
     public class RegisterOrganizationValidatorTests : ValidatorTestBase<RegisterOrganization>
     {

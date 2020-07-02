@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.UnitTests
+namespace $safeprojectname$
 {
     public abstract class ValidatorTestBase<T>
     {

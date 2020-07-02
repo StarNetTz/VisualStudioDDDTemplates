@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
 
-namespace DomainName.ReadModel.Repositories.RavenDB.IntegrationTests
+namespace $safeprojectname$
 {
     class OrganizationSmartSearchQueryIntegrationTests : QueryIntegrationTestBase
     {

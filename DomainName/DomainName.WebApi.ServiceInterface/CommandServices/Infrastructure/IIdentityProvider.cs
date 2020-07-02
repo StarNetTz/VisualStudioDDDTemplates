@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace DomainName.WebApi.ServiceInterface
+namespace $safeprojectname$
 {
     public interface IIdentityProvider
     {

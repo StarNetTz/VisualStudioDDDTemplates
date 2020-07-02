@@ -8,7 +8,7 @@ using NServiceBus.Logging;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace DomainName.App
+namespace $safeprojectname$
 {
     partial class Program
     {

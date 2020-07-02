@@ -1,9 +1,9 @@
-﻿using DomainName.WebApi.ServiceInterface;
+﻿using $ext_projectname$.WebApi.ServiceInterface;
 using Microsoft.Extensions.Configuration;
 using NServiceBus;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.Infrastructure
+namespace $safeprojectname$
 {
     public class NSBus : IMessageBus
     {
@@ -33,12 +33,12 @@ namespace DomainName.WebApi.Infrastructure
             var routing = transport.Routing();
             routing.RouteToEndpoint(
                 assembly: typeof(PL.Commands.RegisterOrganization).Assembly,
-                destination: config["NSBus:DomainNameAppEndpointName"]);
+                destination: config["NSBus:AppEndpointName"]);
 
             var conventions = endpointConfiguration.Conventions();
             conventions.DefiningCommandsAs(
                 type =>
-                    type.Namespace == "DomainName.PL.Commands"
+                    type.Namespace == "$ext_projectname$.PL.Commands"
                 );
 
             endpointConfiguration.SendOnly();

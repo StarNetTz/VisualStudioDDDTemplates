@@ -1,9 +1,9 @@
-﻿using DomainName.PL.Commands;
+﻿using $ext_projectname$.PL.Commands;
 using Starnet.Aggregates;
 using System;
 using System.Threading.Tasks;
 
-namespace DomainName.Domain.Organization
+namespace $safeprojectname$.Organization
 {
     public interface IOrganizationInteractor : IInteractor { }
 

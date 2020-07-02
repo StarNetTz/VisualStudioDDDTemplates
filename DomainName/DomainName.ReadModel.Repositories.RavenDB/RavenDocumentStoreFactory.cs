@@ -9,7 +9,7 @@ using Raven.Client.ServerWide.Operations;
 using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace DomainName.ReadModel.Repositories.RavenDB
+namespace $safeprojectname$
 {
     public class RavenConfig
     {

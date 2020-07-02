@@ -14,7 +14,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.ReadModel.Repositories.RavenDB\DomainName.ReadModel.Repositories.RavenDB.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel.Repositories.RavenDB\$ext_projectname$.ReadModel.Repositories.RavenDB.csproj" />
   </ItemGroup>
 
   <ItemGroup>

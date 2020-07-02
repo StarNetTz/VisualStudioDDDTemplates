@@ -1,9 +1,9 @@
-﻿using DomainName.PL.Commands;
-using DomainName.PL.Events;
+﻿using $ext_projectname$.PL.Commands;
+using $ext_projectname$.PL.Events;
 using Starnet.Aggregates;
 using System;
 
-namespace DomainName.Domain.Organization
+namespace $safeprojectname$.Organization
 {
     public class OrganizationAggregate : Aggregate
     {

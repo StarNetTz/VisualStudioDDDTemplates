@@ -4,7 +4,7 @@ using Starnet.Aggregates;
 using System;
 using System.Threading.Tasks;
 
-namespace DomainName.Domain.NSBus
+namespace $safeprojectname$
 {
     public abstract class AggregateHandlerBase
     {

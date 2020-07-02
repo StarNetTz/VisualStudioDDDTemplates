@@ -1,12 +1,12 @@
-﻿using DomainName.Domain.Organization;
-using DomainName.PL.Commands;
+﻿using $ext_projectname$.Domain.Organization;
+using $ext_projectname$.PL.Commands;
 using Moq;
 using NServiceBus.Testing;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DomainName.Domain.NSBus.Tests
+namespace $safeprojectname$
 {
     public class RegisterOrganizationHandlerTests
     {

@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
 using Funq;
 using ServiceStack;
-using DomainName.WebApi.ServiceInterface;
-using DomainName.WebApi.ServiceModel;
+using $ext_projectname$.WebApi.ServiceInterface;
+using $ext_projectname$.WebApi.ServiceModel;
 
-namespace DomainName.WebApi.IntegrationTests
+namespace $safeprojectname$
 {
     public class IntegrationTest
     {
@@ -13,7 +13,7 @@ namespace DomainName.WebApi.IntegrationTests
 
         class AppHost : AppSelfHostBase
         {
-            public AppHost() : base(nameof(IntegrationTest), typeof(HelloService).Assembly) { }
+            public AppHost() : base(nameof(IntegrationTest), typeof(OrganizationService).Assembly) { }
 
             public override void Configure(Container container)
             {
@@ -37,9 +37,9 @@ namespace DomainName.WebApi.IntegrationTests
         {
             var client = CreateClient();
 
-            var response = client.Get(new Hello { Name = "World" });
+            var response = client.Get(new FindOrganizations { Id = "Organizations-0" });
 
-            Assert.That(response.Result, Is.EqualTo("Hello, World!"));
+            Assert.That(response.Result, Is.Null);
         }
     }
 }

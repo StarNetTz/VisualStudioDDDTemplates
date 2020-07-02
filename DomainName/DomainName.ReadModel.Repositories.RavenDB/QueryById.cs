@@ -1,7 +1,7 @@
 ﻿using Raven.Client.Documents;
 using System.Threading.Tasks;
 
-namespace DomainName.ReadModel.Repositories.RavenDB
+namespace $safeprojectname$
 {
     public class QueryById<T> : IQueryById<T>
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DomainName.PL.Commands
+namespace $safeprojectname$
 {
     public interface ICommand
     {

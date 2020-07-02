@@ -1,7 +1,7 @@
-﻿using DomainName.PL;
+﻿using $ext_projectname$.PL;
 using ServiceStack.FluentValidation;
 
-namespace DomainName.WebApi.ServiceInterface
+namespace $safeprojectname$
 {
     public class AddressValidator : AbstractValidator<Address>
     {

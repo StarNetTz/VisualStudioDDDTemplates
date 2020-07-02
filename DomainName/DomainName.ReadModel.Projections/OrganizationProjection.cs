@@ -1,8 +1,8 @@
-﻿using DomainName.PL.Events;
+﻿using $ext_projectname$.PL.Events;
 using Starnet.Projections;
 using System.Threading.Tasks;
 
-namespace DomainName.ReadModel.Projections
+namespace $safeprojectname$
 {
     [SubscribesToStream(StreamName)]
     public class OrganizationProjection : Projection, IHandledBy<OrganizationProjectionHandler>

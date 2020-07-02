@@ -1,5 +1,5 @@
-﻿using DomainName.ReadModel.Projections;
-using DomainName.ReadModel.Repositories.RavenDB;
+﻿using $ext_projectname$.ReadModel.Projections;
+using $ext_projectname$.ReadModel.Repositories.RavenDB;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace DomainName.ReadModel.App
+namespace $safeprojectname$
 {
     class Program
     {

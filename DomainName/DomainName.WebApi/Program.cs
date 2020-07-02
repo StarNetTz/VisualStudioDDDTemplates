@@ -3,7 +3,7 @@ using Microsoft.AspNetCore.Hosting;
 using ServiceStack;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi
+namespace $safeprojectname$
 {
     public class Program
     {

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DomainName.Domain
+namespace $safeprojectname$
 {
     public interface ITimeProvider
     {

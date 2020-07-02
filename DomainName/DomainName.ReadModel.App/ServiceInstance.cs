@@ -1,5 +1,5 @@
-﻿using DomainName.ReadModel.Projections;
-using DomainName.ReadModel.Projections.ES;
+﻿using $ext_projectname$.ReadModel.Projections;
+using $ext_projectname$.ReadModel.Projections.ES;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
@@ -11,7 +11,7 @@ using System.Reflection;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace DomainName.ReadModel.App
+namespace $safeprojectname$
 {
     internal class ServiceInstance : IHostedService
     {

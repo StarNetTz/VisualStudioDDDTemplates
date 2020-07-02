@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DomainName.ReadModel
+namespace $safeprojectname$
 {
     public class PaginatedResult<T>
     {

@@ -1,7 +1,7 @@
-﻿using DomainName.WebApi.ServiceModel;
+﻿using $ext_projectname$.WebApi.ServiceModel;
 using ServiceStack.FluentValidation;
 
-namespace DomainName.WebApi.ServiceInterface
+namespace $safeprojectname$
 {
     public class RegisterOrganizationValidator : AbstractValidator<RegisterOrganization>
     {

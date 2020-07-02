@@ -1,4 +1,4 @@
-﻿namespace DomainName.ReadModel
+﻿namespace $safeprojectname$
 {
     public interface ISmartSearchQueryRequest
     {

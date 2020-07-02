@@ -1,11 +1,11 @@
 ﻿using NUnit.Framework;
 using ServiceStack;
-using DomainName.WebApi.ServiceInterface;
-using DomainName.WebApi.ServiceModel;
+using $ext_projectname$.WebApi.ServiceInterface;
+using $ext_projectname$.WebApi.ServiceModel;
 using System.Threading.Tasks;
-using DomainName.PL;
+using $ext_projectname$.PL;
 
-namespace DomainName.WebApi.UnitTests
+namespace $safeprojectname$
 {
     public class OrganizationCommandServiceTests : CommandServiceTestBase<OrganizationService>
     {

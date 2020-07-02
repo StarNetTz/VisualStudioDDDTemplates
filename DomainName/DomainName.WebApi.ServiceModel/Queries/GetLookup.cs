@@ -1,7 +1,7 @@
-﻿using DomainName.ReadModel;
+﻿using $ext_projectname$.ReadModel;
 using ServiceStack;
 
-namespace DomainName.WebApi.ServiceModel
+namespace $safeprojectname$
 {
     [Route("/lookups")]
     public class GetLookup : IReturn<Lookup>

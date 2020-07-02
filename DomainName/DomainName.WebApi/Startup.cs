@@ -4,16 +4,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Funq;
 using ServiceStack;
-using DomainName.WebApi.ServiceInterface;
-using DomainName.ReadModel;
-using DomainName.ReadModel.Repositories.RavenDB;
-using DomainName.WebApi.Infrastructure;
+using $ext_projectname$.WebApi.ServiceInterface;
+using $ext_projectname$.ReadModel;
+using $ext_projectname$.ReadModel.Repositories.RavenDB;
+using $ext_projectname$.WebApi.Infrastructure;
 using ServiceStack.Validation;
 using ServiceStack.Auth;
 using Microsoft.Extensions.Hosting;
 using Raven.Client.Documents;
 
-namespace DomainName.WebApi
+namespace $safeprojectname$
 {
     public class Startup : ModularStartup
     {
@@ -49,7 +49,7 @@ namespace DomainName.WebApi
 
     public class AppHost : AppHostBase
     {
-        public AppHost(IConfiguration configuration) : base("DomainName.WebApi", typeof(OrganizationService).Assembly)
+        public AppHost(IConfiguration configuration) : base("$safeprojectname$", typeof(OrganizationService).Assembly)
         {
             Configuration = configuration;
             Licensing.RegisterLicense(Configuration["ServiceStack:Licence"]);

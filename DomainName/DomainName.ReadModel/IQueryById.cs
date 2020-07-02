@@ -1,6 +1,6 @@
 ﻿using System.Threading.Tasks;
 
-namespace DomainName.ReadModel
+namespace $safeprojectname$
 {
     public interface IQueryById<T>
     {

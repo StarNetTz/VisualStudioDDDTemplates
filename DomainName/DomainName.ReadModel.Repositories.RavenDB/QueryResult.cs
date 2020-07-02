@@ -1,7 +1,7 @@
 ﻿using Raven.Client.Documents.Session;
 using System.Collections.Generic;
 
-namespace DomainName.ReadModel.Repositories.RavenDB
+namespace $safeprojectname$
 {
     public class QueryResult<T>
     {

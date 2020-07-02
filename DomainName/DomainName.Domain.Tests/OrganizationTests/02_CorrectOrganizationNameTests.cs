@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
 
-namespace DomainName.Domain.Tests.OrganizationTests
+namespace $safeprojectname$
 {
     class CorrectOrganizationNameTests : _ServiceSpec
     {

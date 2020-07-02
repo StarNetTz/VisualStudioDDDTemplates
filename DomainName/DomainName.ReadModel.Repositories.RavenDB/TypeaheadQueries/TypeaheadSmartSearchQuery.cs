@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace DomainName.ReadModel.Repositories.RavenDB
+namespace $safeprojectname$
 {
     public class TypeaheadSmartSearchQuery : SmartSearchQuery<TypeaheadItem>, ITypeaheadSmartSearchQuery
     {
