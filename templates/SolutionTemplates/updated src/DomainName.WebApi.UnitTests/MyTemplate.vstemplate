@@ -1,0 +1,45 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>DomainName.WebApi.UnitTests</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>DomainName.WebApi.UnitTests</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="DomainName.WebApi.UnitTests.csproj" File="DomainName.WebApi.UnitTests.csproj" ReplaceParameters="true">
+      <Folder Name="CommandServicesUnitTests" TargetFolderName="CommandServicesUnitTests">
+        <Folder Name="OrganizationTests" TargetFolderName="OrganizationTests">
+          <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationCommandServiceTests.cs">OrganizationCommandServiceTests.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="RegisterOrganizationValidatorTests.cs">RegisterOrganizationValidatorTests.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CommandServiceTestBase.cs">CommandServiceTestBase.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ValidatorTestBase.cs">ValidatorTestBase.cs</ProjectItem>
+      </Folder>
+      <Folder Name="QueryServiceUnitTests" TargetFolderName="QueryServiceUnitTests">
+        <Folder Name="LookupsTests" TargetFolderName="LookupsTests">
+          <ProjectItem ReplaceParameters="true" TargetFileName="LookupsServiceTests.cs">LookupsServiceTests.cs</ProjectItem>
+        </Folder>
+        <Folder Name="OrganizationTests" TargetFolderName="OrganizationTests">
+          <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationQueryServiceTests.cs">OrganizationQueryServiceTests.cs</ProjectItem>
+        </Folder>
+        <Folder Name="TypeaheadsTests" TargetFolderName="TypeaheadsTests">
+          <ProjectItem ReplaceParameters="true" TargetFileName="TypeaheadsServiceTests.cs">TypeaheadsServiceTests.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="QueryServiceTestBase.cs">QueryServiceTestBase.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SimpleInjectorIocAdapter.cs">SimpleInjectorIocAdapter.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Stubs.cs">Stubs.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>
