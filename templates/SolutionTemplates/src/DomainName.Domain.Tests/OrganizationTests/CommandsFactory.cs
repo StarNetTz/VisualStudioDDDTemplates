@@ -1,13 +1,12 @@
 ﻿using $ext_projectname$.PL.Commands;
 using System;
 
-namespace $safeprojectname$.OrganizationTests
+namespace $safeprojectname$
 {
     public class CommandsFactory
     {
         public static RegisterOrganization CreateRegisterOrganizationCommand(string id)
-        {
-            return new RegisterOrganization()
+            => new RegisterOrganization()
             {
                 Id = id,
                 IssuedBy = "zeko",
@@ -22,17 +21,14 @@ namespace $safeprojectname$.OrganizationTests
                     PostalCode = "3021"
                 }
             };
-        }
 
         public static CorrectOrganizationName CreateCorrectOrganizationNameCommand(string id)
-        {
-            return new CorrectOrganizationName()
+            => new CorrectOrganizationName()
             {
                 Id = id,
                 IssuedBy = "zeko",
                 TimeIssued = DateTime.MinValue,
                 Name = "New name"
             };
-        }
     }
 }

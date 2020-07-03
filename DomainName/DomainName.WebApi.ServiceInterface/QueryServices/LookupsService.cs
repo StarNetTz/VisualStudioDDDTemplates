@@ -1,9 +1,9 @@
-﻿using DomainName.ReadModel;
-using DomainName.WebApi.ServiceModel;
+﻿using $ext_projectname$.ReadModel;
+using $ext_projectname$.WebApi.ServiceModel;
 using ServiceStack;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.ServiceInterface.QueryServices
+namespace $safeprojectname$
 {
     public class LookupsService : Service
     {
@@ -15,8 +15,6 @@ namespace DomainName.WebApi.ServiceInterface.QueryServices
         }
 
         public async Task<object> Any(GetLookup req)
-        {
-            return await QueryById.GetById(req.Id);
-        }
+            => await QueryById.GetById(req.Id);
     }
 }

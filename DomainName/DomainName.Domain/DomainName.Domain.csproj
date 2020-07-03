@@ -5,11 +5,11 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Starnet.Aggregates" Version="6.0.0" />
+    <PackageReference Include="Starnet.Aggregates" Version="6.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.PL\DomainName.PL.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.PL\$ext_projectname$.PL.csproj" />
   </ItemGroup>
 
 </Project>

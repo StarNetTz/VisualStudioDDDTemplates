@@ -20,12 +20,14 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="_ICommand.cs">_ICommand.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationCommands.cs">OrganizationCommands.cs</ProjectItem>
       </Folder>
+      <Folder Name="Common" TargetFolderName="Common">
+        <ProjectItem ReplaceParameters="true" TargetFileName="Address.cs">Address.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="ValueObject.cs">ValueObject.cs</ProjectItem>
+      </Folder>
       <Folder Name="Events" TargetFolderName="Events">
         <ProjectItem ReplaceParameters="true" TargetFileName="_IEvent.cs">_IEvent.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationEvents.cs">OrganizationEvents.cs</ProjectItem>
       </Folder>
-      <ProjectItem ReplaceParameters="true" TargetFileName="Address.cs">Address.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="ValueObject.cs">ValueObject.cs</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

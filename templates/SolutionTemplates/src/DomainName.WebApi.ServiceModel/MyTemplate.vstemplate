@@ -24,8 +24,6 @@
         <ProjectItem ReplaceParameters="true" TargetFileName="FindOrganizations.cs">FindOrganizations.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="GetLookup.cs">GetLookup.cs</ProjectItem>
       </Folder>
-      <ProjectItem ReplaceParameters="true" TargetFileName="Address.cs">Address.cs</ProjectItem>
-      <ProjectItem ReplaceParameters="true" TargetFileName="Hello.cs">Hello.cs</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

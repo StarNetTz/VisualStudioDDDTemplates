@@ -1,0 +1,16 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>StarnetDDDAggregate.cs</DefaultName>
+    <Name>StarnetDDD Aggregate</Name>
+    <Description>&lt;Create new Aggregate, AggregateState, and AggregateInteractor&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem SubType="" TargetFileName="$fileinputname$\$fileinputname$AggregateState.cs" ReplaceParameters="true">CompanyAggregateState.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$\$fileinputname$Aggregate.cs" ReplaceParameters="true">CompanyAggregate.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$\$fileinputname$Interactor.cs" ReplaceParameters="true">CompanyInteractor.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

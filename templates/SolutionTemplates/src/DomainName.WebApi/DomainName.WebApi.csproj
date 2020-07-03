@@ -9,14 +9,15 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="RavenDB.Client" Version="4.2.101" />
-    <PackageReference Include="ServiceStack" Version="5.8.0" />
-    <PackageReference Include="ServiceStack.HttpClient.Core" Version="5.8.0" />
-    <PackageReference Include="SimpleInjector" Version="4.9.1" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.6.4" />
+    <PackageReference Include="RavenDB.Client" Version="4.2.103" />
+    <PackageReference Include="ServiceStack" Version="5.9.0" />
+    <PackageReference Include="ServiceStack.HttpClient.Core" Version="5.9.0" />
+    <PackageReference Include="SimpleInjector" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\$ext_projectname$.ReadModel.Queries\$ext_projectname$.ReadModel.Queries.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel.Repositories.RavenDB\$ext_projectname$.ReadModel.Repositories.RavenDB.csproj" />
     <ProjectReference Include="..\$ext_projectname$.ReadModel\$ext_projectname$.ReadModel.csproj" />
     <ProjectReference Include="..\$ext_projectname$.WebApi.Infrastructure\$ext_projectname$.WebApi.Infrastructure.csproj" />
     <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceInterface\$ext_projectname$.WebApi.ServiceInterface.csproj" />
@@ -31,9 +32,6 @@
   
   <ItemGroup>
     <None Update="license.xml">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </None>
-    <None Update="starnetAuthApp.pfx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
   </ItemGroup>

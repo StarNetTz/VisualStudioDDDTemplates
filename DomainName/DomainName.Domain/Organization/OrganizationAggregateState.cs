@@ -1,8 +1,8 @@
-﻿using DomainName.PL;
-using DomainName.PL.Events;
+﻿using $ext_projectname$.PL;
+using $ext_projectname$.PL.Events;
 using Starnet.Aggregates;
 
-namespace DomainName.Domain.Organization
+namespace $safeprojectname$.Organization
 {
     public class OrganizationAggregateState : AggregateState
     {
@@ -10,9 +10,7 @@ namespace DomainName.Domain.Organization
         internal Address Address { get; set; }
 
         protected override void DelegateWhenToConcreteClass(object ev)
-        {
-            When((dynamic)ev);
-        }
+            => When((dynamic)ev);
 
         void When(OrganizationRegistered e)
         {

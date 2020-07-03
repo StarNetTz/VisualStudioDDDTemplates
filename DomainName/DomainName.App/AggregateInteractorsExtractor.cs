@@ -1,11 +1,11 @@
-﻿using DomainName.Domain.Organization;
+﻿using $ext_projectname$.Domain.Organization;
 using Starnet.Aggregates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
 
-namespace DomainName.App
+namespace $safeprojectname$
 {
     public class AggregateInteractorsExtractor
     {

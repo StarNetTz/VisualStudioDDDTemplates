@@ -1,13 +1,11 @@
-﻿using DomainName.WebApi.ServiceInterface;
+﻿using $ext_projectname$.WebApi.ServiceInterface;
 using System;
 
-namespace DomainName.WebApi.Infrastructure
+namespace $safeprojectname$
 {
     public class TimeProvider : ITimeProvider
     {
         public DateTime GetUtcTime()
-        {
-            return DateTime.UtcNow;
-        }
+            => DateTime.UtcNow;
     }
 }

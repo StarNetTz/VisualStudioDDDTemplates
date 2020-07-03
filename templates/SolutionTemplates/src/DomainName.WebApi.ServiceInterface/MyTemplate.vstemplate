@@ -26,14 +26,14 @@
         <Folder Name="OrganizationService" TargetFolderName="OrganizationService">
           <ProjectItem ReplaceParameters="true" TargetFileName="AddressValidator.cs">AddressValidator.cs</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationService.cs">OrganizationService.cs</ProjectItem>
+          <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationValidators.cs">OrganizationValidators.cs</ProjectItem>
         </Folder>
       </Folder>
       <Folder Name="QueryServices" TargetFolderName="QueryServices">
         <ProjectItem ReplaceParameters="true" TargetFileName="LookupsService.cs">LookupsService.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationQueryService.cs">OrganizationQueryService.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="TypeAheadsService.cs">TypeAheadsService.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="TypeaheadQueryService.cs">TypeaheadQueryService.cs</ProjectItem>
       </Folder>
-      <ProjectItem ReplaceParameters="true" TargetFileName="MyServices.cs">MyServices.cs</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

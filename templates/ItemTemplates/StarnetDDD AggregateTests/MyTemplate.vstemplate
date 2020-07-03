@@ -1,0 +1,15 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Item">
+  <TemplateData>
+    <DefaultName>StarnetDDD AggregateTests.cs</DefaultName>
+    <Name>StarnetDDD Aggregate Tests</Name>
+    <Description>&lt;Create unit test and ServiceSpec file&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <SortOrder>10</SortOrder>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <References />
+    <ProjectItem SubType="" TargetFileName="$fileinputname$Tests\Create$fileinputname$Tests.cs" ReplaceParameters="true">RegisterCompanyTests.cs</ProjectItem>
+    <ProjectItem SubType="" TargetFileName="$fileinputname$Tests\_ServiceSpec.cs" ReplaceParameters="true">_ServiceSpec.cs</ProjectItem>
+  </TemplateContent>
+</VSTemplate>

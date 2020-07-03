@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DomainName.PL.Events
+namespace $safeprojectname$
 {
     public interface IEvent
     {

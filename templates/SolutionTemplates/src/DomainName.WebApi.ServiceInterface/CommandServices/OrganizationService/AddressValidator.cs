@@ -1,6 +1,5 @@
-﻿using $ext_projectname$.WebApi.ServiceModel;
+﻿using $ext_projectname$.PL;
 using ServiceStack.FluentValidation;
-using System;
 
 namespace $safeprojectname$
 {

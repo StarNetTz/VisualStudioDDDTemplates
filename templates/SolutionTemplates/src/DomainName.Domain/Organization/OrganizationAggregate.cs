@@ -32,18 +32,15 @@ namespace $safeprojectname$.Organization
             };
             Apply(e);
         }
+        
             bool IsIdempotent(RegisterOrganization c)
-            {
-                return (
-                        (c.Id == State.Id) &&
-                        (c.Name == State.Name) &&
-                        (c.Address == State.Address)
-                    );
-            }
+                => c.Id == State.Id 
+                && c.Name == State.Name 
+                && c.Address == State.Address;
 
         internal void CorrectOrganizationName(CorrectOrganizationName c)
         {
-            if (State.Name == c.Name)
+            if (IsIdempotent(c))
                 return;
             var e = new OrganizationNameCorrected()
             {
@@ -54,5 +51,8 @@ namespace $safeprojectname$.Organization
             };
             Apply(e);
         }
+
+            bool IsIdempotent(CorrectOrganizationName c)
+                => c.Name == State.Name;
     }
 }

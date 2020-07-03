@@ -1,22 +1,18 @@
-﻿using DomainName.Domain.Organization;
-using DomainName.PL.Commands;
+﻿using $ext_projectname$.Domain.Organization;
+using $ext_projectname$.PL.Commands;
 using NServiceBus;
 using System.Threading.Tasks;
 
-namespace DomainName.Domain.NSBus
+namespace $safeprojectname$
 {
     public class RegisterOrganizationHandler : AggregateHandlerBase, IHandleMessages<RegisterOrganization>
     {
         readonly IOrganizationInteractor Svc;
 
         public RegisterOrganizationHandler(IOrganizationInteractor svc)
-        {
-            Svc = svc;
-        }
+            => Svc = svc;
 
         public async Task Handle(RegisterOrganization message, IMessageHandlerContext context)
-        {
-            await TryHandle(message, context, Svc);
-        }
+            => await TryHandle(message, context, Svc);
     }
 }

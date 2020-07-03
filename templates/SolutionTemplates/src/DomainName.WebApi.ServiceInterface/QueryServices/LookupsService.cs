@@ -3,7 +3,7 @@ using $ext_projectname$.WebApi.ServiceModel;
 using ServiceStack;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$.QueryServices
+namespace $safeprojectname$
 {
     public class LookupsService : Service
     {
@@ -15,8 +15,6 @@ namespace $safeprojectname$.QueryServices
         }
 
         public async Task<object> Any(GetLookup req)
-        {
-            return await QueryById.GetById(req.Id);
-        }
+            => await QueryById.GetById(req.Id);
     }
 }

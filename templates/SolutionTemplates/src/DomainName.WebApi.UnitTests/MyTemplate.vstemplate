@@ -16,22 +16,30 @@
   </TemplateData>
   <TemplateContent>
     <Project TargetFileName="DomainName.WebApi.UnitTests.csproj" File="DomainName.WebApi.UnitTests.csproj" ReplaceParameters="true">
-      <Folder Name="UnitTests" TargetFolderName="UnitTests">
-        <Folder Name="CommandServicesUnitTests" TargetFolderName="CommandServicesUnitTests">
-          <ProjectItem ReplaceParameters="true" TargetFileName="CommandServiceTestBase.cs">CommandServiceTestBase.cs</ProjectItem>
+      <Folder Name="CommandServicesUnitTests" TargetFolderName="CommandServicesUnitTests">
+        <Folder Name="OrganizationTests" TargetFolderName="OrganizationTests">
           <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationCommandServiceTests.cs">OrganizationCommandServiceTests.cs</ProjectItem>
           <ProjectItem ReplaceParameters="true" TargetFileName="RegisterOrganizationValidatorTests.cs">RegisterOrganizationValidatorTests.cs</ProjectItem>
         </Folder>
-        <Folder Name="QueryServiceUnitTests" TargetFolderName="QueryServiceUnitTests">
-          <ProjectItem ReplaceParameters="true" TargetFileName="LookupsServiceTests.cs">LookupsServiceTests.cs</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationQueryServiceTests.cs">OrganizationQueryServiceTests.cs</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="StubQueryById.cs">StubQueryById.cs</ProjectItem>
-          <ProjectItem ReplaceParameters="true" TargetFileName="TypeaheadsServiceTests.cs">TypeaheadsServiceTests.cs</ProjectItem>
-        </Folder>
-        <ProjectItem ReplaceParameters="true" TargetFileName="UnitTest.cs">UnitTest.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="CommandServiceTestBase.cs">CommandServiceTestBase.cs</ProjectItem>
         <ProjectItem ReplaceParameters="true" TargetFileName="ValidatorTestBase.cs">ValidatorTestBase.cs</ProjectItem>
       </Folder>
-      <ProjectItem ReplaceParameters="true" TargetFileName="SimpleInjectorIocAdapter.cs">SimpleInjectorIocAdapter.cs</ProjectItem>
+      <Folder Name="QueryServiceUnitTests" TargetFolderName="QueryServiceUnitTests">
+        <Folder Name="LookupsTests" TargetFolderName="LookupsTests">
+          <ProjectItem ReplaceParameters="true" TargetFileName="LookupsServiceTests.cs">LookupsServiceTests.cs</ProjectItem>
+        </Folder>
+        <Folder Name="OrganizationTests" TargetFolderName="OrganizationTests">
+          <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationQueryServiceTests.cs">OrganizationQueryServiceTests.cs</ProjectItem>
+        </Folder>
+        <Folder Name="TypeaheadsTests" TargetFolderName="TypeaheadsTests">
+          <ProjectItem ReplaceParameters="true" TargetFileName="TypeaheadsServiceTests.cs">TypeaheadsServiceTests.cs</ProjectItem>
+        </Folder>
+        <ProjectItem ReplaceParameters="true" TargetFileName="QueryServiceTestBase.cs">QueryServiceTestBase.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="SimpleInjectorIocAdapter.cs">SimpleInjectorIocAdapter.cs</ProjectItem>
+      </Folder>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="Stubs.cs">Stubs.cs</ProjectItem>
     </Project>
   </TemplateContent>
 </VSTemplate>

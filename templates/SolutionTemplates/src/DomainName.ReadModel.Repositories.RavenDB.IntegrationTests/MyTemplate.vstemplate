@@ -1,0 +1,26 @@
+<VSTemplate Version="3.0.0" xmlns="http://schemas.microsoft.com/developer/vstemplate/2005" Type="Project">
+  <TemplateData>
+    <Name>DomainName.ReadModel.Repositories.RavenDB.IntegrationTests</Name>
+    <Description>&lt;No description available&gt;</Description>
+    <ProjectType>CSharp</ProjectType>
+    <ProjectSubType>
+    </ProjectSubType>
+    <SortOrder>1000</SortOrder>
+    <CreateNewFolder>true</CreateNewFolder>
+    <DefaultName>DomainName.ReadModel.Repositories.RavenDB.IntegrationTests</DefaultName>
+    <ProvideDefaultName>true</ProvideDefaultName>
+    <LocationField>Enabled</LocationField>
+    <EnableLocationBrowseButton>true</EnableLocationBrowseButton>
+    <CreateInPlace>true</CreateInPlace>
+    <Icon>__TemplateIcon.ico</Icon>
+  </TemplateData>
+  <TemplateContent>
+    <Project TargetFileName="DomainName.ReadModel.Repositories.RavenDB.IntegrationTests.csproj" File="DomainName.ReadModel.Repositories.RavenDB.IntegrationTests.csproj" ReplaceParameters="true">
+      <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
+      <ProjectItem ReplaceParameters="false" TargetFileName="DomainName.ReadModel.Repositories.RavenDB.IntegrationTests.v3.ncrunchproject">DomainName.ReadModel.Repositories.RavenDB.IntegrationTests.v3.ncrunchproject</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="OrganizationSmartSearchQueryIntegrationTests.cs">OrganizationSmartSearchQueryIntegrationTests.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="QueryIntegrationTestBase.cs">QueryIntegrationTestBase.cs</ProjectItem>
+      <ProjectItem ReplaceParameters="true" TargetFileName="RavenDbIntegrationTests.cs">RavenDbIntegrationTests.cs</ProjectItem>
+    </Project>
+  </TemplateContent>
+</VSTemplate>

@@ -1,7 +1,7 @@
 ﻿using NUnit.Framework;
 using System.Threading.Tasks;
 
-namespace DomainName.Domain.Tests.OrganizationTests
+namespace $safeprojectname$
 {
     class CorrectOrganizationNameTests : _ServiceSpec
     {
@@ -12,6 +12,15 @@ namespace DomainName.Domain.Tests.OrganizationTests
             Given(EventsFactory.CreateOrganizationRegisteredEvent(aggId));
             When(CommandsFactory.CreateCorrectOrganizationNameCommand(aggId));
             await Expect(EventsFactory.CreateOrganizationNameCorrectedEvent(aggId));
+        }
+
+        [Test]
+        public async Task Throws_Error_On_Organization_Non_Existant()
+        {
+            var aggId = "Organizations-1";
+            Given();
+            When(CommandsFactory.CreateCorrectOrganizationNameCommand(aggId));
+            await ExpectError("OrganizationDoesNotExist");
         }
 
         [Test]

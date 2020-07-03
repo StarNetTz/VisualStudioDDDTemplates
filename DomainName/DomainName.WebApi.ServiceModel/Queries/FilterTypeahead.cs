@@ -1,7 +1,7 @@
-﻿using DomainName.ReadModel;
+﻿using $ext_projectname$.ReadModel;
 using ServiceStack;
 
-namespace DomainName.WebApi.ServiceModel
+namespace $safeprojectname$
 {
     [Route("/typeaheads")]
     public class FilterTypeahead : IReturn<PaginatedResult<TypeaheadItem>>

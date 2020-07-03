@@ -1,9 +1,7 @@
 ﻿using ServiceStack;
-using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DomainName.WebApi.ServiceInterface
+namespace $safeprojectname$
 {
     public class DomainCommandService : Service
     {
@@ -18,11 +16,11 @@ namespace DomainName.WebApi.ServiceInterface
             return new ResponseStatus();
         }
 
-        void AddAuditInfoToCommand(PL.Commands.Command cmd)
-        {
-            var ses = Request.GetSession();
-            cmd.IssuedBy = ses.Email;
-            cmd.TimeIssued = TimeProvider.GetUtcTime();
-        }
+            void AddAuditInfoToCommand(PL.Commands.Command cmd)
+            {
+                var ses = Request.GetSession();
+                cmd.IssuedBy = ses.Email;
+                cmd.TimeIssued = TimeProvider.GetUtcTime();
+            }
     }
 }

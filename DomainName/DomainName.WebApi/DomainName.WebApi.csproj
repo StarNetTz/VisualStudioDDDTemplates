@@ -9,18 +9,19 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="RavenDB.Client" Version="4.2.8" />
-    <PackageReference Include="ServiceStack" Version="5.8.0" />
-    <PackageReference Include="ServiceStack.HttpClient.Core" Version="5.8.0" />
-    <PackageReference Include="SimpleInjector" Version="4.9.0" />
+    <PackageReference Include="NLog.Extensions.Logging" Version="1.6.4" />
+    <PackageReference Include="RavenDB.Client" Version="4.2.103" />
+    <PackageReference Include="ServiceStack" Version="5.9.0" />
+    <PackageReference Include="ServiceStack.HttpClient.Core" Version="5.9.0" />
+    <PackageReference Include="SimpleInjector" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.ReadModel.Queries\DomainName.ReadModel.Queries.csproj" />
-    <ProjectReference Include="..\DomainName.ReadModel\DomainName.ReadModel.csproj" />
-    <ProjectReference Include="..\DomainName.WebApi.Infrastructure\DomainName.WebApi.Infrastructure.csproj" />
-    <ProjectReference Include="..\DomainName.WebApi.ServiceInterface\DomainName.WebApi.ServiceInterface.csproj" />
-    <ProjectReference Include="..\DomainName.WebApi.ServiceModel\DomainName.WebApi.ServiceModel.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel.Repositories.RavenDB\$ext_projectname$.ReadModel.Repositories.RavenDB.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.ReadModel\$ext_projectname$.ReadModel.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.WebApi.Infrastructure\$ext_projectname$.WebApi.Infrastructure.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceInterface\$ext_projectname$.WebApi.ServiceInterface.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceModel\$ext_projectname$.WebApi.ServiceModel.csproj" />
   </ItemGroup>
   
   <ItemGroup>

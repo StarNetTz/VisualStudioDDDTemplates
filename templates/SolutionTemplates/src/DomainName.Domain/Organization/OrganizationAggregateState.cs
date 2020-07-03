@@ -10,9 +10,7 @@ namespace $safeprojectname$.Organization
         internal Address Address { get; set; }
 
         protected override void DelegateWhenToConcreteClass(object ev)
-        {
-            When((dynamic)ev);
-        }
+            => When((dynamic)ev);
 
         void When(OrganizationRegistered e)
         {

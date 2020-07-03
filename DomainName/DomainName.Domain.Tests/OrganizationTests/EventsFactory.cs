@@ -1,13 +1,12 @@
-﻿using DomainName.PL.Events;
+﻿using $ext_projectname$.PL.Events;
 using System;
 
-namespace DomainName.Domain.Tests.OrganizationTests
+namespace $safeprojectname$
 {
     public class EventsFactory
     {
         public static OrganizationRegistered CreateOrganizationRegisteredEvent(string id)
-        {
-            return new OrganizationRegistered()
+            => new OrganizationRegistered()
             {
                 Id = id,
                 IssuedBy = "zeko",
@@ -22,17 +21,14 @@ namespace DomainName.Domain.Tests.OrganizationTests
                     PostalCode = "3021"
                 }
             };
-        }
 
         public static OrganizationNameCorrected CreateOrganizationNameCorrectedEvent(string id)
-        {
-            return new OrganizationNameCorrected()
+            => new OrganizationNameCorrected()
             {
                 Id = id,
                 IssuedBy = "zeko",
                 TimeIssued = DateTime.MinValue,
                 Name = "New name"
             };
-        }
     }
 }

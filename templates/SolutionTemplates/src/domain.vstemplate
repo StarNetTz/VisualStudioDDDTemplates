@@ -38,8 +38,9 @@
                     <ProjectTemplateLink ProjectName="$projectname$.ReadModel.Projections.Tests" CopyParameters="true">DomainName.ReadModel.Projections.Tests\MyTemplate.vstemplate</ProjectTemplateLink>
                 </SolutionFolder>
                 <SolutionFolder Name="Queries">
-                    <ProjectTemplateLink ProjectName="$projectname$.ReadModel.Queries" CopyParameters="true">DomainName.ReadModel.Queries\MyTemplate.vstemplate</ProjectTemplateLink>
-                    <ProjectTemplateLink ProjectName="$projectname$.ReadModel.Queries.Tests" CopyParameters="true">DomainName.ReadModel.Queries.Tests\MyTemplate.vstemplate</ProjectTemplateLink>
+                    <ProjectTemplateLink ProjectName="$projectname$.ReadModel.Repositories.RavenDB" CopyParameters="true">DomainName.ReadModel.Repositories.RavenDB\MyTemplate.vstemplate</ProjectTemplateLink>
+                    <ProjectTemplateLink ProjectName="$projectname$.ReadModel.Repositories.RavenDB.UnitTests" CopyParameters="true">DomainName.ReadModel.Repositories.RavenDB.UnitTests\MyTemplate.vstemplate</ProjectTemplateLink>
+                    <ProjectTemplateLink ProjectName="$projectname$.ReadModel.Repositories.RavenDB.IntegrationTests" CopyParameters="true">DomainName.ReadModel.Repositories.RavenDB.IntegrationTests\MyTemplate.vstemplate</ProjectTemplateLink>
                 </SolutionFolder>
             </SolutionFolder>
             <SolutionFolder Name="04_Api">

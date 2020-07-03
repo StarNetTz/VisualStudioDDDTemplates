@@ -10,16 +10,16 @@
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="ServiceStack" Version="5.8.0" />
-    <PackageReference Include="ServiceStack.HttpClient.Core" Version="5.8.0" />
-    <PackageReference Include="ServiceStack.Interfaces" Version="5.8.0" />
-    <PackageReference Include="ServiceStack.Kestrel" Version="5.8.0" />
-    <PackageReference Include="SimpleInjector" Version="4.9.0" />
+    <PackageReference Include="ServiceStack" Version="5.9.0" />
+    <PackageReference Include="ServiceStack.HttpClient.Core" Version="5.9.0" />
+    <PackageReference Include="ServiceStack.Interfaces" Version="5.9.0" />
+    <PackageReference Include="ServiceStack.Kestrel" Version="5.9.0" />
+    <PackageReference Include="SimpleInjector" Version="5.0.2" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\DomainName.WebApi.ServiceInterface\DomainName.WebApi.ServiceInterface.csproj" />
-    <ProjectReference Include="..\DomainName.WebApi.ServiceModel\DomainName.WebApi.ServiceModel.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceInterface\$ext_projectname$.WebApi.ServiceInterface.csproj" />
+    <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceModel\$ext_projectname$.WebApi.ServiceModel.csproj" />
   </ItemGroup>
 
 </Project>

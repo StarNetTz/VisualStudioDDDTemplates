@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Starnet.Projections.ES" Version="6.0.2" />
+    <PackageReference Include="Starnet.Projections.ES" Version="8.2.0" />
   </ItemGroup>
 
 </Project>
