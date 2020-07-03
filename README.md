@@ -11,8 +11,11 @@ Create new project by choosing Starnet DDD template.
 To add new aggregate you should:
 1. Add new StarnetDDD AggregateMessages item to Solution.PL project
 2. Add new StarnetDDD Aggregate item to Solution.Domain project
-3. Add new StarnetDDD Aggregate Tests item to Solution.Domain.Tests project
-4. Replace _DOMAIN_ marker with SolutionName
+3. Add new StarnetDDD AggregateTests item to Solution.Domain.Tests project
+4. Replace $projectname$ marker with SolutionName
 
 NCrunch is recommended for live tests. Remember to exclude integration tests.
-You will need to provide servicestack licence and NSBus license.xml files as needed.
+You will need to provide:
+1. Servicestack licence in appsettings ServiceStack:Licence 
+2. NSBus license.xml
+3. JWT key in appsettings JWT:Key
