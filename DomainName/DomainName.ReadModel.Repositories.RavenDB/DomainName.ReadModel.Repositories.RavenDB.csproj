@@ -10,7 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\$ext_projectname$.ReadModel\$ext_projectname$.ReadModel.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel\DomainName.ReadModel.csproj" />
   </ItemGroup>
 
 </Project>

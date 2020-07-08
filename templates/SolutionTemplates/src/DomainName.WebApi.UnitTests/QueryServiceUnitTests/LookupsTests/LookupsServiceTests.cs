@@ -3,7 +3,7 @@ using $ext_projectname$.WebApi.ServiceInterface;
 using $ext_projectname$.WebApi.ServiceModel;
 using NUnit.Framework;
 using ServiceStack.Configuration;
-using SimpleInjector;
+using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 
 namespace $safeprojectname$
@@ -11,12 +11,12 @@ namespace $safeprojectname$
     class LookupsServiceTests : QueryServiceTestBase<LookupsService>
     {
         public override IContainerAdapter CreateContainerAdapter()
-            => new SimpleInjectorIocAdapter(SIContainer());
+            => new MicrosoftDIAdapter(MSContainer());
 
-        Container SIContainer()
+        IServiceCollection MSContainer()
         {
-            var c = new Container();
-            c.Register(typeof(IQueryById<Lookup>), typeof(LookupQueryById));
+            var c = new ServiceCollection();
+            c.AddSingleton(typeof(IQueryById<Lookup>), typeof(LookupQueryById));
             return c;
         }
 

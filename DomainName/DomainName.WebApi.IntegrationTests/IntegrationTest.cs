@@ -1,10 +1,10 @@
 ﻿using NUnit.Framework;
 using Funq;
 using ServiceStack;
-using $ext_projectname$.WebApi.ServiceInterface;
-using $ext_projectname$.WebApi.ServiceModel;
+using DomainName.WebApi.ServiceInterface;
+using DomainName.WebApi.ServiceModel;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.IntegrationTests
 {
     public class IntegrationTest
     {
@@ -39,7 +39,7 @@ namespace $safeprojectname$
 
             var response = client.Get(new FindOrganizations { Id = "Organizations-0" });
 
-            Assert.That(response.Result, Is.Null);
+            Assert.That(response, Is.Null);
         }
     }
 }

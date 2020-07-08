@@ -1,8 +1,8 @@
-﻿using $ext_projectname$.ReadModel.Repositories.RavenDB;
+﻿using DomainName.ReadModel.Repositories.RavenDB;
 using Microsoft.Extensions.Configuration;
 using Raven.Client.Documents;
 
-namespace $safeprojectname$
+namespace DomainName.ReadModel.Repositories.RavenDB.IntegrationTests
 {
     public class QueryIntegrationTestBase
     {

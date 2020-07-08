@@ -1,9 +1,9 @@
-﻿using $ext_projectname$.PL.Commands;
-using $ext_projectname$.PL.Events;
+﻿using DomainName.PL.Commands;
+using DomainName.PL.Events;
 using Starnet.Aggregates;
 using System;
 
-namespace $safeprojectname$.Organization
+namespace DomainName.Domain.Organization
 {
     public class OrganizationAggregate : Aggregate
     {
@@ -32,11 +32,11 @@ namespace $safeprojectname$.Organization
             };
             Apply(e);
         }
-        
-            bool IsIdempotent(RegisterOrganization c)
-                => c.Id == State.Id 
-                && c.Name == State.Name 
-                && c.Address == State.Address;
+
+        bool IsIdempotent(RegisterOrganization c)
+            => c.Id == State.Id
+            && c.Name == State.Name
+            && c.Address == State.Address;
 
         internal void CorrectOrganizationName(CorrectOrganizationName c)
         {
@@ -52,7 +52,7 @@ namespace $safeprojectname$.Organization
             Apply(e);
         }
 
-            bool IsIdempotent(CorrectOrganizationName c)
-                => c.Name == State.Name;
+        bool IsIdempotent(CorrectOrganizationName c)
+            => c.Name == State.Name;
     }
 }

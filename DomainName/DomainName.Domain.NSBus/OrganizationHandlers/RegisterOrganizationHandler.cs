@@ -1,9 +1,9 @@
-﻿using $ext_projectname$.Domain.Organization;
-using $ext_projectname$.PL.Commands;
+﻿using DomainName.Domain.Organization;
+using DomainName.PL.Commands;
 using NServiceBus;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.Domain.NSBus
 {
     public class RegisterOrganizationHandler : AggregateHandlerBase, IHandleMessages<RegisterOrganization>
     {

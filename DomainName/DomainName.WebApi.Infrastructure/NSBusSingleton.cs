@@ -1,9 +1,9 @@
-﻿using $ext_projectname$.WebApi.ServiceInterface;
+﻿using DomainName.WebApi.ServiceInterface;
 using Microsoft.Extensions.Configuration;
 using NServiceBus;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.Infrastructure
 {
     public class NSBus : IMessageBus
     {
@@ -38,7 +38,7 @@ namespace $safeprojectname$
             var conventions = endpointConfiguration.Conventions();
             conventions.DefiningCommandsAs(
                 type =>
-                    type.Namespace == "$ext_projectname$.PL.Commands"
+                    type.Namespace == "DomainName.PL.Commands"
                 );
 
             endpointConfiguration.SendOnly();

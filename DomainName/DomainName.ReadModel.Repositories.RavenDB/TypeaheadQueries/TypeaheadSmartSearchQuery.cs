@@ -6,7 +6,7 @@ using System.Linq;
 using System.Threading.Tasks;
 
 
-namespace $safeprojectname$
+namespace DomainName.ReadModel.Repositories.RavenDB
 {
     public class TypeaheadSmartSearchQuery : SmartSearchQuery<TypeaheadItem>, ITypeaheadSmartSearchQuery
     {
@@ -24,25 +24,25 @@ namespace $safeprojectname$
             }
         }
 
-            async Task<QueryResult<TypeaheadItem>> SearchOrganizations(ISmartSearchQueryRequest qry)
+        async Task<QueryResult<TypeaheadItem>> SearchOrganizations(ISmartSearchQueryRequest qry)
+        {
+            QueryResult<TypeaheadItem> retVal = new QueryResult<TypeaheadItem>();
+            QueryStatistics statsRef = new QueryStatistics();
+            List<TypeaheadItem> searchResult = null;
+            using (var ses = DocumentStore.OpenAsyncSession())
             {
-                QueryResult<TypeaheadItem> retVal = new QueryResult<TypeaheadItem>();
-                QueryStatistics statsRef = new QueryStatistics();
-                List<TypeaheadItem> searchResult = null;
-                using (var ses = DocumentStore.OpenAsyncSession())
-                {
-                    searchResult = await ses.Query<Organization, Organizations_Smart_Search>()
-                       .Statistics(out statsRef)
-                       .Search(x => x.Name, $"{qry.Qry}")
-                       .Skip(qry.CurrentPage * qry.PageSize)
-                       .Take(qry.PageSize)
-                       .Select(x => new TypeaheadItem { Id = x.Id, Value = x.Name })
-                       .ToListAsync();
+                searchResult = await ses.Query<Organization, Organizations_Smart_Search>()
+                   .Statistics(out statsRef)
+                   .Search(x => x.Name, $"{qry.Qry}")
+                   .Skip(qry.CurrentPage * qry.PageSize)
+                   .Take(qry.PageSize)
+                   .Select(x => new TypeaheadItem { Id = x.Id, Value = x.Name })
+                   .ToListAsync();
 
-                    retVal.Data = searchResult;
-                    retVal.Statistics = statsRef;
-                }
-                return retVal;
+                retVal.Data = searchResult;
+                retVal.Statistics = statsRef;
             }
+            return retVal;
+        }
     }
 }

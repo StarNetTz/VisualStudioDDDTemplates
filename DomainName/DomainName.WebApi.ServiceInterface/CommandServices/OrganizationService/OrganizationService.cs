@@ -1,7 +1,7 @@
-﻿using $ext_projectname$.WebApi.ServiceModel;
+﻿using DomainName.WebApi.ServiceModel;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.ServiceInterface
 {
     public class OrganizationService : DomainCommandService
     {

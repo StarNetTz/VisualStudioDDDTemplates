@@ -1,8 +1,8 @@
-﻿using $ext_projectname$.PL.Events;
+﻿using DomainName.PL.Events;
 using Starnet.Projections;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.ReadModel.Projections
 {
     [SubscribesToStream(StreamName)]
     public class OrganizationProjection : Projection, IHandledBy<OrganizationProjectionHandler>
@@ -22,15 +22,15 @@ namespace $safeprojectname$
         public async Task Handle(dynamic @event, long checkpoint)
             => await When(@event, checkpoint);
 
-            async Task When(OrganizationRegistered e, long checkpoint)
-            {
-                var doc = await Store.LoadAsync<Organization>(e.Id);
-                if (doc == null)
-                    doc = new Organization();
-                doc.Id = e.Id;
-                doc.Name = e.Name;
-                doc.Address = e.Address;
-                await Store.StoreAsync(doc);
-            }
+        async Task When(OrganizationRegistered e, long checkpoint)
+        {
+            var doc = await Store.LoadAsync<Organization>(e.Id);
+            if (doc == null)
+                doc = new Organization();
+            doc.Id = e.Id;
+            doc.Name = e.Name;
+            doc.Address = e.Address;
+            await Store.StoreAsync(doc);
+        }
     }
 }

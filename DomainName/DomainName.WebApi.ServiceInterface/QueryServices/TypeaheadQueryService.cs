@@ -1,9 +1,9 @@
-﻿using $ext_projectname$.ReadModel;
-using $ext_projectname$.WebApi.ServiceModel;
+﻿using DomainName.ReadModel;
+using DomainName.WebApi.ServiceModel;
 using ServiceStack;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.ServiceInterface
 {
     public class TypeaheadQueryService : Service
     {

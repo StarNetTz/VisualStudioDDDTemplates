@@ -1,5 +1,5 @@
-﻿using $ext_projectname$.ReadModel.Projections;
-using $ext_projectname$.ReadModel.Repositories.RavenDB;
+﻿using DomainName.ReadModel.Projections;
+using DomainName.ReadModel.Repositories.RavenDB;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
@@ -13,7 +13,7 @@ using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.ReadModel.App
 {
     class Program
     {
@@ -52,14 +52,14 @@ namespace $safeprojectname$
                     configHost.AddCommandLine(args);
                 });
 
-                    static void RegisterProjectionHandlers(IServiceCollection services)
-                    {
-                        var a = Assembly.GetAssembly(typeof(OrganizationProjectionHandler));
-                        var results = from type in a.GetTypes()
-                                      where typeof(IHandler).IsAssignableFrom(type)
-                                      select type;
-                        foreach (var t in results)
-                            services.AddTransient(t);
-                    }
+        static void RegisterProjectionHandlers(IServiceCollection services)
+        {
+            var a = Assembly.GetAssembly(typeof(OrganizationProjectionHandler));
+            var results = from type in a.GetTypes()
+                          where typeof(IHandler).IsAssignableFrom(type)
+                          select type;
+            foreach (var t in results)
+                services.AddTransient(t);
+        }
     }
 }

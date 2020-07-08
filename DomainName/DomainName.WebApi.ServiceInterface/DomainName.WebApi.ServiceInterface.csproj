@@ -9,10 +9,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\$ext_projectname$.PL\$ext_projectname$.PL.csproj" />
-    <ProjectReference Include="..\$ext_projectname$.ReadModel.Repositories.RavenDB\$ext_projectname$.ReadModel.Repositories.RavenDB.csproj" />
-    <ProjectReference Include="..\$ext_projectname$.ReadModel\$ext_projectname$.ReadModel.csproj" />
-    <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceModel\$ext_projectname$.WebApi.ServiceModel.csproj" />
+    <ProjectReference Include="..\DomainName.PL\DomainName.PL.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel.Repositories.RavenDB\DomainName.ReadModel.Repositories.RavenDB.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel\DomainName.ReadModel.csproj" />
+    <ProjectReference Include="..\DomainName.WebApi.ServiceModel\DomainName.WebApi.ServiceModel.csproj" />
   </ItemGroup>
 
 </Project>

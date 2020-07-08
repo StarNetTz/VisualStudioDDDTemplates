@@ -1,7 +1,7 @@
-﻿using $ext_projectname$.PL.Events;
+﻿using DomainName.PL.Events;
 using System;
 
-namespace $safeprojectname$
+namespace DomainName.Domain.Tests
 {
     public class EventsFactory
     {

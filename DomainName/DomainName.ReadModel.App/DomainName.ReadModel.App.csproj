@@ -23,17 +23,16 @@
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.5" />
     <PackageReference Include="NLog.Extensions.Logging" Version="1.6.4" />
     <PackageReference Include="NServiceBus.Extensions.Logging" Version="1.0.0" />
-    <PackageReference Include="SimpleInjector" Version="5.0.2" />
     <PackageReference Include="Starnet.Projections" Version="8.2.0" />
     <PackageReference Include="Starnet.Projections.ES" Version="8.2.1" />
     <PackageReference Include="Starnet.Projections.RavenDb" Version="8.2.0" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\$ext_projectname$.ReadModel.Projections.ES\$ext_projectname$.ReadModel.Projections.ES.csproj" />
-    <ProjectReference Include="..\$ext_projectname$.ReadModel.Projections\$ext_projectname$.ReadModel.Projections.csproj" />
-    <ProjectReference Include="..\$ext_projectname$.ReadModel.Repositories.RavenDB\$ext_projectname$.ReadModel.Repositories.RavenDB.csproj" />
-    <ProjectReference Include="..\$ext_projectname$.ReadModel\$ext_projectname$.ReadModel.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel.Projections.ES\DomainName.ReadModel.Projections.ES.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel.Projections\DomainName.ReadModel.Projections.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel.Repositories.RavenDB\DomainName.ReadModel.Repositories.RavenDB.csproj" />
+    <ProjectReference Include="..\DomainName.ReadModel\DomainName.ReadModel.csproj" />
   </ItemGroup>
 
   <ItemGroup>

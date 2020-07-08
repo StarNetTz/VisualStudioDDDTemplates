@@ -1,10 +1,10 @@
-﻿using $ext_projectname$.PL.Events;
+﻿using DomainName.PL.Events;
 using NUnit.Framework;
 using Starnet.Projections.Testing;
 using System;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.ReadModel.Projections.Tests
 {
     public class OrganizationRegisteredTests : ProjectionSpecification<OrganizationProjection>
     {

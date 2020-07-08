@@ -1,22 +1,22 @@
-﻿using $ext_projectname$.ReadModel;
-using $ext_projectname$.WebApi.ServiceInterface.QueryServices;
-using $ext_projectname$.WebApi.ServiceModel;
+﻿using DomainName.ReadModel;
+using DomainName.WebApi.ServiceInterface;
+using DomainName.WebApi.ServiceModel;
+using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using ServiceStack.Configuration;
-using SimpleInjector;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.UnitTests
 {
     class LookupsServiceTests : QueryServiceTestBase<LookupsService>
     {
         public override IContainerAdapter CreateContainerAdapter()
-            => new SimpleInjectorIocAdapter(SIContainer());
+            => new MicrosoftDIAdapter(MSContainer());
 
-        Container SIContainer()
+        IServiceCollection MSContainer()
         {
-            var c = new Container();
-            c.Register(typeof(IQueryById<Lookup>), typeof(LookupQueryById));
+            var c = new ServiceCollection();
+            c.AddSingleton(typeof(IQueryById<Lookup>), typeof(LookupQueryById));
             return c;
         }
 
