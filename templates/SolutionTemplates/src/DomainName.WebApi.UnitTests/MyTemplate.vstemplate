@@ -35,7 +35,7 @@
           <ProjectItem ReplaceParameters="true" TargetFileName="TypeaheadsServiceTests.cs">TypeaheadsServiceTests.cs</ProjectItem>
         </Folder>
         <ProjectItem ReplaceParameters="true" TargetFileName="QueryServiceTestBase.cs">QueryServiceTestBase.cs</ProjectItem>
-        <ProjectItem ReplaceParameters="true" TargetFileName="SimpleInjectorIocAdapter.cs">SimpleInjectorIocAdapter.cs</ProjectItem>
+        <ProjectItem ReplaceParameters="true" TargetFileName="MicrosoftDIAdapter.cs">MicrosoftDIAdapter.cs</ProjectItem>
       </Folder>
       <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.Development.json">appsettings.Development.json</ProjectItem>
       <ProjectItem ReplaceParameters="true" TargetFileName="appsettings.json">appsettings.json</ProjectItem>
