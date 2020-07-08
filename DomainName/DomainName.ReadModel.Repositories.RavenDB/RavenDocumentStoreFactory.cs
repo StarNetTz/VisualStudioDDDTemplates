@@ -9,7 +9,7 @@ using Raven.Client.ServerWide.Operations;
 using System;
 using System.Security.Cryptography.X509Certificates;
 
-namespace $safeprojectname$
+namespace DomainName.ReadModel.Repositories.RavenDB
 {
     public class RavenConfig
     {
@@ -47,31 +47,31 @@ namespace $safeprojectname$
             return store;
         }
 
-            void EnsureDatabaseExists(IDocumentStore store, string database = null, bool createDatabaseIfNotExists = true)
-            {
-                database = database ?? store.Database;
+        void EnsureDatabaseExists(IDocumentStore store, string database = null, bool createDatabaseIfNotExists = true)
+        {
+            database = database ?? store.Database;
 
-                if (string.IsNullOrWhiteSpace(database))
-                    throw new ArgumentException("Value cannot be null or whitespace.", nameof(database));
+            if (string.IsNullOrWhiteSpace(database))
+                throw new ArgumentException("Value cannot be null or whitespace.", nameof(database));
+
+            try
+            {
+                store.Maintenance.ForDatabase(database).Send(new GetStatisticsOperation());
+            }
+            catch (DatabaseDoesNotExistException)
+            {
+                if (createDatabaseIfNotExists == false)
+                    throw;
 
                 try
                 {
-                    store.Maintenance.ForDatabase(database).Send(new GetStatisticsOperation());
+                    store.Maintenance.Server.Send(new CreateDatabaseOperation(new DatabaseRecord(database)));
                 }
-                catch (DatabaseDoesNotExistException)
+                catch (ConcurrencyException)
                 {
-                    if (createDatabaseIfNotExists == false)
-                        throw;
-
-                    try
-                    {
-                        store.Maintenance.Server.Send(new CreateDatabaseOperation(new DatabaseRecord(database)));
-                    }
-                    catch (ConcurrencyException)
-                    {
-                        // The database was already created before calling CreateDatabaseOperation
-                    }
+                    // The database was already created before calling CreateDatabaseOperation
                 }
             }
+        }
     }
 }

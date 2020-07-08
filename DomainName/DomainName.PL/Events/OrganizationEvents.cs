@@ -1,4 +1,4 @@
-﻿namespace $safeprojectname$
+﻿namespace DomainName.PL.Events
 {
     public class OrganizationRegistered : Event
     {

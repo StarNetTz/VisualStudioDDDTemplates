@@ -1,7 +1,7 @@
-﻿using $ext_projectname$.WebApi.ServiceInterface;
+﻿using DomainName.WebApi.ServiceInterface;
 using System;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.Infrastructure
 {
     public class TimeProvider : ITimeProvider
     {

@@ -1,6 +1,6 @@
-﻿using $ext_projectname$.PL;
+﻿using DomainName.PL;
 
-namespace $safeprojectname$
+namespace DomainName.ReadModel
 {
     public class Organization
     {

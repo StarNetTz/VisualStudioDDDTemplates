@@ -1,9 +1,9 @@
-﻿using $ext_projectname$.PL.Commands;
+﻿using DomainName.PL.Commands;
 using Starnet.Aggregates;
 using System;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$.Organization
+namespace DomainName.Domain.Organization
 {
     public interface IOrganizationInteractor : IInteractor { }
 
@@ -43,10 +43,10 @@ namespace $safeprojectname$.Organization
         public override async Task Execute(object command)
             => await When((dynamic)command);
 
-            async Task When(RegisterOrganization c)
-                => await IdempotentlyCreateAgg(c.Id, agg => agg.RegisterOrganization(c));
+        async Task When(RegisterOrganization c)
+            => await IdempotentlyCreateAgg(c.Id, agg => agg.RegisterOrganization(c));
 
-            async Task When(CorrectOrganizationName c)
-                => await IdempotentlyUpdateAgg(c.Id, agg => agg.CorrectOrganizationName(c));
+        async Task When(CorrectOrganizationName c)
+            => await IdempotentlyUpdateAgg(c.Id, agg => agg.CorrectOrganizationName(c));
     }
 }

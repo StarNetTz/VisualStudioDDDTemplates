@@ -4,16 +4,16 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
 using Funq;
 using ServiceStack;
-using $ext_projectname$.WebApi.ServiceInterface;
-using $ext_projectname$.ReadModel;
-using $ext_projectname$.ReadModel.Repositories.RavenDB;
-using $ext_projectname$.WebApi.Infrastructure;
+using DomainName.WebApi.ServiceInterface;
+using DomainName.ReadModel;
+using DomainName.ReadModel.Repositories.RavenDB;
+using DomainName.WebApi.Infrastructure;
 using ServiceStack.Validation;
 using ServiceStack.Auth;
 using Microsoft.Extensions.Hosting;
 using Raven.Client.Documents;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi
 {
     public class Startup : ModularStartup
     {
@@ -31,8 +31,8 @@ namespace $safeprojectname$
             services.AddTransient(typeof(IQueryById<>), typeof(QueryById<>));
         }
 
-            IDocumentStore CreateRavenDbDocumentStore()
-                => new RavenDocumentStoreFactory().CreateAndInitializeDocumentStore(RavenConfig.FromConfiguration(Configuration));
+        IDocumentStore CreateRavenDbDocumentStore()
+            => new RavenDocumentStoreFactory().CreateAndInitializeDocumentStore(RavenConfig.FromConfiguration(Configuration));
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
@@ -49,7 +49,7 @@ namespace $safeprojectname$
 
     public class AppHost : AppHostBase
     {
-        public AppHost(IConfiguration configuration) : base("$safeprojectname$", typeof(OrganizationService).Assembly)
+        public AppHost(IConfiguration configuration) : base("DomainName.WebApi", typeof(OrganizationService).Assembly)
         {
             Configuration = configuration;
             Licensing.RegisterLicense(Configuration["ServiceStack:Licence"]);
@@ -82,7 +82,7 @@ namespace $safeprojectname$
             }));
         }
 
-            string[] GetOriginWhiteList()
-                => Configuration["CORS:Whitelist"].Split(';');
+        string[] GetOriginWhiteList()
+            => Configuration["CORS:Whitelist"].Split(';');
     }
 }

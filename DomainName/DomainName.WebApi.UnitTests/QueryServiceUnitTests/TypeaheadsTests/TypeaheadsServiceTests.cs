@@ -1,22 +1,22 @@
-﻿using $ext_projectname$.ReadModel;
-using $ext_projectname$.WebApi.ServiceInterface.QueryServices;
-using $ext_projectname$.WebApi.ServiceModel;
+﻿using DomainName.ReadModel;
+using DomainName.WebApi.ServiceInterface;
+using DomainName.WebApi.ServiceModel;
+using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using ServiceStack.Configuration;
-using SimpleInjector;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.UnitTests
 {
     class TypeaheadsServiceTests : QueryServiceTestBase<TypeaheadQueryService>
     {
         public override IContainerAdapter CreateContainerAdapter()
-            => new SimpleInjectorIocAdapter(SIContainer());
+            => new MicrosoftDIAdapter(MSContainer());
 
-        Container SIContainer()
+        IServiceCollection MSContainer()
         {
-            var c = new Container();
-            c.Register<ITypeaheadSmartSearchQuery, StubTypeaheadSmartSearchQuery>();
+            var c = new ServiceCollection();
+            c.AddSingleton<ITypeaheadSmartSearchQuery, StubTypeaheadSmartSearchQuery>();
             return c;
         }
 

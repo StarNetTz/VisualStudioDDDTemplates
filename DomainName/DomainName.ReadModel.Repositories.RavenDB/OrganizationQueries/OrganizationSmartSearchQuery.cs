@@ -4,7 +4,7 @@ using Raven.Client.Documents.Session;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.ReadModel.Repositories.RavenDB
 {
     public class OrganizationSmartSearchQuery : SmartSearchQuery<Organization>, IOrganizationSmartSearchQuery
     {

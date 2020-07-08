@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.ServiceInterface
 {
     public interface ITimeProvider
     {

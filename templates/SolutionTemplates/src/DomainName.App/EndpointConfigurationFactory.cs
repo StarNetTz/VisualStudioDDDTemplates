@@ -36,12 +36,16 @@ namespace $safeprojectname$
 
         ESAggregateRepository CreateEventStoreAggregateRepository(IConfiguration config)
         {
-            var uri = new Uri(config["EventStore:Uri"]);
-            var Connection = EventStoreConnection.Create(uri);
+            var connectionString = config["EventStore:ConnectionString"];
+            var Connection = EventStoreConnection.Create(connectionString);
             Connection.ConnectAsync().Wait();
+            AssertEventStoreAvailable(Connection);
             var Repository = new ESAggregateRepository(Connection);
             return Repository;
         }
+
+        void AssertEventStoreAvailable(IEventStoreConnection Connection)
+            => _ = Connection.GetStreamMetadataAsync("$ce-Any").Result;
 
         static void RegisterAggregateInteractors(NServiceBus.ObjectBuilder.IConfigureComponents reg)
         {

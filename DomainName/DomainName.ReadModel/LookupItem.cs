@@ -1,4 +1,4 @@
-﻿namespace $safeprojectname$
+﻿namespace DomainName.ReadModel
 {
     public class LookupItem
     {

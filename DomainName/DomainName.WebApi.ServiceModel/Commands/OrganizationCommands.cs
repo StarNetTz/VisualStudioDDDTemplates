@@ -1,7 +1,7 @@
-﻿using $ext_projectname$.PL;
+﻿using DomainName.PL;
 using ServiceStack;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.ServiceModel
 {
     [Route("/companies", Verbs = "POST")]
     public class RegisterOrganization : IReturn<ResponseStatus>

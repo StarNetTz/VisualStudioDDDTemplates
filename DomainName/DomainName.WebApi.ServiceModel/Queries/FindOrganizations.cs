@@ -1,7 +1,7 @@
-﻿using $ext_projectname$.ReadModel;
+﻿using DomainName.ReadModel;
 using ServiceStack;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.ServiceModel
 {
     [Route("/organizations", Verbs = "GET")]
     public class FindOrganizations : IReturn<PaginatedResult<Organization>>

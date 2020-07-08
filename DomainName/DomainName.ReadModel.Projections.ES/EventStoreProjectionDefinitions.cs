@@ -1,7 +1,7 @@
 ﻿using Starnet.Projections.ES;
 using System.Collections.Generic;
 
-namespace $safeprojectname$
+namespace DomainName.ReadModel.Projections.ES
 {
     public class EventStoreProjectionDefinitions
     {

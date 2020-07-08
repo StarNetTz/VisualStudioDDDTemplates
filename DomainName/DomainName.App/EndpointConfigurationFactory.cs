@@ -1,4 +1,4 @@
-﻿using $ext_projectname$.Domain.Infrastructure;
+﻿using DomainName.Domain.Infrastructure;
 using EventStore.ClientAPI;
 using Microsoft.Extensions.Configuration;
 using Npgsql;
@@ -7,7 +7,7 @@ using NServiceBus;
 using Starnet.Aggregates.ES;
 using System;
 
-namespace $safeprojectname$
+namespace DomainName.App
 {
     class EndpointConfigurationFactory
     {
@@ -36,12 +36,16 @@ namespace $safeprojectname$
 
         ESAggregateRepository CreateEventStoreAggregateRepository(IConfiguration config)
         {
-            var uri = new Uri(config["EventStore:Uri"]);
-            var Connection = EventStoreConnection.Create(uri);
+            var connectionString = config["EventStore:ConnectionString"];
+            var Connection = EventStoreConnection.Create(connectionString);
             Connection.ConnectAsync().Wait();
+            AssertEventStoreAvailable(Connection);
             var Repository = new ESAggregateRepository(Connection);
             return Repository;
         }
+
+        void AssertEventStoreAvailable(IEventStoreConnection Connection)
+            => _ = Connection.GetStreamMetadataAsync("$ce-Any").Result;
 
         static void RegisterAggregateInteractors(NServiceBus.ObjectBuilder.IConfigureComponents reg)
         {
@@ -59,7 +63,7 @@ namespace $safeprojectname$
         static void InitializePostgressPersistence(IConfiguration config, EndpointConfiguration endpointConfiguration)
         {
             var persistence = endpointConfiguration.UsePersistence<SqlPersistence>();
-            persistence.TablePrefix("$ext_projectname$");
+            persistence.TablePrefix("DomainName");
 
             var dialect = persistence.SqlDialect<SqlDialect.PostgreSql>();
             dialect.JsonBParameterModifier(
@@ -78,8 +82,8 @@ namespace $safeprojectname$
         static void SetupConventions(EndpointConfiguration endpointConfiguration)
         {
             var conventions = endpointConfiguration.Conventions();
-            conventions.DefiningCommandsAs(type => type.Namespace == "$ext_projectname$.PL.Commands");
-            conventions.DefiningEventsAs(type => type.Namespace == "$ext_projectname$.PL.Events");
+            conventions.DefiningCommandsAs(type => type.Namespace == "DomainName.PL.Commands");
+            conventions.DefiningEventsAs(type => type.Namespace == "DomainName.PL.Events");
         }
 
         static void SetupAuditing(IConfiguration config, EndpointConfiguration endpointConfiguration)

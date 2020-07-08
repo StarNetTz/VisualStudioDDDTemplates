@@ -1,4 +1,4 @@
-﻿namespace $safeprojectname$
+﻿namespace DomainName.PL.Commands
 {
     public class RegisterOrganization : Command
     {

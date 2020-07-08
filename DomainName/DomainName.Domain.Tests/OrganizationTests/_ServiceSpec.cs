@@ -1,11 +1,11 @@
-﻿using $ext_projectname$.Domain.Organization;
-using $ext_projectname$.PL.Commands;
-using $ext_projectname$.PL.Events;
+﻿using DomainName.Domain.Organization;
+using DomainName.PL.Commands;
+using DomainName.PL.Events;
 using Starnet.Aggregates.Testing;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.Domain.Tests
 {
     internal class _ServiceSpec : ApplicationServiceSpecification<ICommand, IEvent>
     {

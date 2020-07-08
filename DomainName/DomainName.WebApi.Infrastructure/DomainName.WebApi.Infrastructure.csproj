@@ -15,9 +15,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\$ext_projectname$.PL\$ext_projectname$.PL.csproj" />
-    <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceInterface\$ext_projectname$.WebApi.ServiceInterface.csproj" />
-    <ProjectReference Include="..\$ext_projectname$.WebApi.ServiceModel\$ext_projectname$.WebApi.ServiceModel.csproj" />
+    <ProjectReference Include="..\DomainName.PL\DomainName.PL.csproj" />
+    <ProjectReference Include="..\DomainName.WebApi.ServiceInterface\DomainName.WebApi.ServiceInterface.csproj" />
+    <ProjectReference Include="..\DomainName.WebApi.ServiceModel\DomainName.WebApi.ServiceModel.csproj" />
   </ItemGroup>
 
 </Project>

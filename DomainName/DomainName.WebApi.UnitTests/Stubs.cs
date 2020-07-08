@@ -1,10 +1,10 @@
-﻿using $ext_projectname$.ReadModel;
-using $ext_projectname$.WebApi.ServiceInterface;
+﻿using DomainName.ReadModel;
+using DomainName.WebApi.ServiceInterface;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace $safeprojectname$
+namespace DomainName.WebApi.UnitTests
 {
     public class StubMessageBus : IMessageBus
     {

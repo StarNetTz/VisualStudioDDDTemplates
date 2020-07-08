@@ -1,9 +1,9 @@
 ﻿using $ext_projectname$.ReadModel;
 using $ext_projectname$.WebApi.ServiceInterface;
 using $ext_projectname$.WebApi.ServiceModel;
+using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using ServiceStack.Configuration;
-using SimpleInjector;
 using System.Threading.Tasks;
 
 namespace $safeprojectname$
@@ -11,12 +11,12 @@ namespace $safeprojectname$
     class TypeaheadsServiceTests : QueryServiceTestBase<TypeaheadQueryService>
     {
         public override IContainerAdapter CreateContainerAdapter()
-            => new SimpleInjectorIocAdapter(SIContainer());
+            => new MicrosoftDIAdapter(MSContainer());
 
-        Container SIContainer()
+        IServiceCollection MSContainer()
         {
-            var c = new Container();
-            c.Register<ITypeaheadSmartSearchQuery, StubTypeaheadSmartSearchQuery>();
+            var c = new ServiceCollection();
+            c.AddSingleton<ITypeaheadSmartSearchQuery, StubTypeaheadSmartSearchQuery>();
             return c;
         }
 

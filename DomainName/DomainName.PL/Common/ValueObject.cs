@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace $safeprojectname$
+namespace DomainName.PL
 {
     /*Microsoft ValueObject implementation*/
     public abstract class ValueObject

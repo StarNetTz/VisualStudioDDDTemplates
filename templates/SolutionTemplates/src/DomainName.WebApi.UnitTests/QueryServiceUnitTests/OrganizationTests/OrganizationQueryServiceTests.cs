@@ -3,7 +3,7 @@ using $ext_projectname$.WebApi.ServiceInterface;
 using $ext_projectname$.WebApi.ServiceModel;
 using NUnit.Framework;
 using ServiceStack.Configuration;
-using SimpleInjector;
+using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 
 namespace $safeprojectname$
@@ -11,13 +11,13 @@ namespace $safeprojectname$
     public class OrganizationQueryServiceTests : QueryServiceTestBase<OrganizationQueryService>
     {
         public override IContainerAdapter CreateContainerAdapter()
-            => new SimpleInjectorIocAdapter(SIContainer());
+            => new MicrosoftDIAdapter(MSContainer());
 
-        Container SIContainer()
+        IServiceCollection MSContainer()
         {
-            var container = new Container();
-            container.Register<IOrganizationSmartSearchQuery, StubOrganizationSmartSearchQuery>();
-            container.Register(typeof(IQueryById<>), typeof(StubQueryById<>));
+            var container = new ServiceCollection();
+            container.AddSingleton<IOrganizationSmartSearchQuery, StubOrganizationSmartSearchQuery>();
+            container.AddSingleton(typeof(IQueryById<>), typeof(StubQueryById<>));
             return container;
         }
 

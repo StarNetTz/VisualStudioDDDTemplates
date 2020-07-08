@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace $safeprojectname$
+namespace DomainName.PL
 {
     public class Address : ValueObject
     {
