@@ -16,8 +16,8 @@ namespace $rootnamespace$.$fileinputname$Tests
         [SetUp]
         public void Setup()
         {
-            Create$fileinputname$Command = new Create$fileinputname$() { Id = AggregateId, IssuedBy = "zeko", Name = "Aggregate name", TimeIssued = DateTime.MinValue};
-            $fileinputname$CreatedEvent = new $fileinputname$Created() { Id = AggregateId, IssuedBy = "zeko", Name = "Aggregate name", TimeIssued = DateTime.MinValue};
+            Create$fileinputname$Command = new Create$fileinputname$() { Id = AggregateId, IssuedBy = "zeko", Name = "Aggregate name", TimeIssued = DateTime.MinValue };
+            $fileinputname$CreatedEvent = new $fileinputname$Created() { Id = AggregateId, IssuedBy = "zeko", Name = "Aggregate name", TimeIssued = DateTime.MinValue };
         }
 
         [Test]
@@ -40,9 +40,9 @@ namespace $rootnamespace$.$fileinputname$Tests
         public async Task cannot_create_$fileinputname$_that_is_already_created()
         {
             Given($fileinputname$CreatedEvent);
-            var when = $fileinputname$CreatedEvent;
-            when.Name = "new Name";
-            When(when);
+            var cmd = Create$fileinputname$Command;
+            cmd.Name = "new Name";
+            When(cmd);
             await ExpectError("$fileinputname$AlreadyExists");
         }
     }
