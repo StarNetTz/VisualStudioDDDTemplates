@@ -43,13 +43,9 @@ namespace $rootnamespace$.$fileinputname$
         }
 
         public override async Task Execute(object command)
-        {
-            await When((dynamic)command);
-        }
+            => await When((dynamic)command);
 
         private async Task When(Create$fileinputname$ c)
-        {
-            await IdempotentlyCreateAgg(c.Id, agg => agg.Create$fileinputname$(c));
-        }
+            => await IdempotentlyCreateAgg(c.Id, agg => agg.Create$fileinputname$(c));
     }
 }

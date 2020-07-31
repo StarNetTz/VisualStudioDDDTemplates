@@ -31,8 +31,6 @@ namespace $rootnamespace$.$fileinputname$
         }
 
             bool IsIdempotent(Create$fileinputname$ c)
-                => c.Id == State.Id
-                && c.Name == State.Name
-                && c.Address == State.Address;
+                => c.Name == State.Name;
     }
 }
