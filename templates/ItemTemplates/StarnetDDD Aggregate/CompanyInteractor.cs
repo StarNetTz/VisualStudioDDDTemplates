@@ -30,7 +30,7 @@ namespace $rootnamespace$.$fileinputname$
                 await AggRepository.StoreAsync(agg);
         }
 
-        async Task IdempotentlyUpdateAgg(string id, Action<OrganizationAggregate> usingThisMethod)
+        async Task IdempotentlyUpdateAgg(string id, Action<$fileinputname$Aggregate> usingThisMethod)
         {
             var agg = await AggRepository.GetAsync<$fileinputname$Aggregate>(id);
             if (agg == null)
