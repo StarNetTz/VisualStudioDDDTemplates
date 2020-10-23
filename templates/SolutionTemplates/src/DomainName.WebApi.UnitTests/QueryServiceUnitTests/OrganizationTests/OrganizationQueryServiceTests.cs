@@ -17,7 +17,7 @@ namespace $safeprojectname$
         {
             var container = new ServiceCollection();
             container.AddSingleton<IOrganizationSmartSearchQuery, StubOrganizationSmartSearchQuery>();
-            container.AddSingleton(typeof(IQueryById<>), typeof(StubQueryById<>));
+            container.AddSingleton<IQueryById, StubQueryById>();
             return container;
         }
 

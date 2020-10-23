@@ -32,7 +32,7 @@ namespace $safeprojectname$
                     services.AddSingleton(docStore);
                     services.AddSingleton<INoSqlStore, DefensiveRavenDbProjectionsStore>();
                     services.AddSingleton<ISqlStore, DefensiveRavenDbProjectionsStore>();
-                    services.AddTransient(typeof(IQueryById<>), typeof(QueryById<>));
+                    services.AddTransient<IQueryById, QueryById>();
                     services.AddTransient<ICheckpointReader, RavenDbCheckpointReader>();
                     services.AddTransient<ICheckpointWriter, RavenDbCheckpointWriter>();
                     services.AddTransient<IHandlerFactory, DIHandlerFactory>();

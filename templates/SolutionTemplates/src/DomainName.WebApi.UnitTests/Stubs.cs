@@ -18,9 +18,9 @@ namespace $safeprojectname$
             => DateTime.MinValue;
     }
 
-    public class StubQueryById<T> : IQueryById<T>
+    public class StubQueryById : IQueryById
     {
-        public Task<T> GetById(string id)
+        public Task<T> GetById<T>(string id)
             => Task.FromResult(default(T));
     }
 
@@ -36,9 +36,9 @@ namespace $safeprojectname$
             => Task.FromResult(new PaginatedResult<TypeaheadItem>());
     }
 
-    public class LookupQueryById : IQueryById<Lookup>
+    public class LookupQueryById : IQueryById
     {
-        public Task<Lookup> GetById(string id)
-            => Task.FromResult(new Lookup() { Id = id, Data = new List<LookupItem> { new LookupItem { Id = "Items-1", Value = "Item 1" } } });
+        public Task<T> GetById<T>(string id)
+            => Task.FromResult((T)(object)new Lookup() { Id = id, Data = new List<LookupItem> { new LookupItem { Id = "Items-1", Value = "Item 1" } } });
     }
 }

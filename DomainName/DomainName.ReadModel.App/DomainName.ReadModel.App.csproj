@@ -23,6 +23,7 @@
     <PackageReference Include="Microsoft.Extensions.Hosting.Abstractions" Version="3.1.5" />
     <PackageReference Include="NLog.Extensions.Logging" Version="1.6.4" />
     <PackageReference Include="NServiceBus.Extensions.Logging" Version="1.0.0" />
+    <PackageReference Include="SimpleInjector" Version="5.0.2" />
     <PackageReference Include="Starnet.Projections" Version="8.2.0" />
     <PackageReference Include="Starnet.Projections.ES" Version="8.2.1" />
     <PackageReference Include="Starnet.Projections.RavenDb" Version="8.2.0" />

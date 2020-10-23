@@ -2,8 +2,8 @@
 
 namespace $safeprojectname$
 {
-    public interface IQueryById<T>
+    public interface IQueryById
     {
-        Task<T> GetById(string id);
+        Task<T> GetById<T>(string id);
     }
 }

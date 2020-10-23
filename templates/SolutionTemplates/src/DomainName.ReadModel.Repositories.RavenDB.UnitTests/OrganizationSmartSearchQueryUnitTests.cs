@@ -53,8 +53,8 @@ namespace $safeprojectname$
         [Test]
         public async Task CanGetOrganizationById()
         {
-            var q = new QueryById<Organization>(DocumentStore);
-            var cmp = await q.GetById("Organizations-1");
+            var q = new QueryById(DocumentStore);
+            var cmp = await q.GetById<Organization>("Organizations-1");
             Assert.That(cmp.Name, Is.EqualTo("Slime Ltd"));
         }
     }
