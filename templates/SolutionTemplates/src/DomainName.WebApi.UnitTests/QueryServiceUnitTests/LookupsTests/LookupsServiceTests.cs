@@ -16,7 +16,7 @@ namespace $safeprojectname$
         IServiceCollection MSContainer()
         {
             var c = new ServiceCollection();
-            c.AddSingleton(typeof(IQueryById<Lookup>), typeof(LookupQueryById));
+            c.AddSingleton<IQueryById, LookupQueryById>();
             return c;
         }
 

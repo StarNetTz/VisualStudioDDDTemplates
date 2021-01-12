@@ -1,9 +1,9 @@
 ﻿using DomainName.ReadModel;
 using DomainName.WebApi.ServiceInterface;
 using DomainName.WebApi.ServiceModel;
-using Microsoft.Extensions.DependencyInjection;
 using NUnit.Framework;
 using ServiceStack.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using System.Threading.Tasks;
 
 namespace DomainName.WebApi.UnitTests
@@ -16,7 +16,7 @@ namespace DomainName.WebApi.UnitTests
         IServiceCollection MSContainer()
         {
             var c = new ServiceCollection();
-            c.AddSingleton(typeof(IQueryById<Lookup>), typeof(LookupQueryById));
+            c.AddSingleton<IQueryById, LookupQueryById>();
             return c;
         }
 

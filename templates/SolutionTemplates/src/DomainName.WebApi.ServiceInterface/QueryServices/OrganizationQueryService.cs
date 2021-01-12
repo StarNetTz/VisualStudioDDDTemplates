@@ -9,9 +9,9 @@ namespace $safeprojectname$
     public class OrganizationQueryService : Service
     {
         readonly IOrganizationSmartSearchQuery Query;
-        readonly IQueryById<Organization> QueryById;
+        readonly IQueryById QueryById;
 
-        public OrganizationQueryService(IOrganizationSmartSearchQuery query, IQueryById<Organization> queryById)
+        public OrganizationQueryService(IOrganizationSmartSearchQuery query, IQueryById queryById)
         {
             Query = query;
             QueryById = queryById;
@@ -26,7 +26,7 @@ namespace $safeprojectname$
 
         async Task<object> GetById(FindOrganizations req)
         {
-            var c = await QueryById.GetById(req.Id);
+            var c = await QueryById.GetById<Organization>(req.Id);
             return c == null ? new PaginatedResult<Organization>() : new PaginatedResult<Organization>() { PageSize = 1, TotalItems = 1, CurrentPage = 0, TotalPages = 1, Data = new List<Organization>() { c } };
         }
 

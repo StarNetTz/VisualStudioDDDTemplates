@@ -7,14 +7,14 @@ namespace $safeprojectname$
 {
     public class LookupsService : Service
     {
-        readonly IQueryById<Lookup> QueryById;
+        readonly IQueryById QueryById;
 
-        public LookupsService(IQueryById<Lookup> queryById)
+        public LookupsService(IQueryById queryById)
         {
             QueryById = queryById;
         }
 
         public async Task<object> Any(GetLookup req)
-            => await QueryById.GetById(req.Id);
+            => await QueryById.GetById<Lookup>(req.Id);
     }
 }

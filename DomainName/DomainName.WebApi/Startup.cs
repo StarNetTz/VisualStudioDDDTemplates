@@ -27,7 +27,7 @@ namespace DomainName.WebApi
             services.AddTransient<ITypeaheadSmartSearchQuery, TypeaheadSmartSearchQuery>();
             services.AddTransient<IMessageBus, NSBus>();
             services.AddTransient<IOrganizationSmartSearchQuery, OrganizationSmartSearchQuery>();
-            services.AddTransient(typeof(IQueryById<>), typeof(QueryById<>));
+            services.AddTransient<IQueryById, QueryById>();
         }
 
         IDocumentStore CreateRavenDbDocumentStore()
